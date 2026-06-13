@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oussama Boukhalfa — Systems Engineer</title>
+  <meta name="description" content="I design and ship production-grade systems — from cloud surveillance pipelines to SaaS platforms. Available for high-impact engineering engagements." />
+  <meta name="author" content="Oussama Boukhalfa" />
+  <meta property="og:title" content="Oussama Boukhalfa — Systems Engineer" />
+  <meta property="og:description" content="I design and ship production-grade systems — from cloud surveillance pipelines to SaaS platforms." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ░░░ NAV ░░░ -->
+<header id="site-header">
+  <nav class="nav-container">
+    <a href="#top" class="nav-wordmark">Oussama Boukhalfa</a>
+    <ul class="nav-anchors">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ░░░ HERO ░░░ -->
+<main id="top">
+<section id="hero" class="hero section-xl">
+  <div class="container">
+    <p class="hero-eyebrow reveal">Systems Engineering · Full-Stack · Algeria</p>
+    <h1 class="hero-headline reveal">
+      I ship infrastructure<br class="br-desktop" /> that holds<br class="br-mobile" /> under pressure.
+    </h1>
+    <p class="hero-sub reveal">
+      Production-grade backend systems, cloud-native pipelines, and full-stack platforms — engineered to perform at scale, not just in demos.
+    </p>
+    <a href="#work" class="cta-primary reveal">Review Engineering Case Studies</a>
+  </div>
+</section>
+
+<!-- ░░░ APPROACH ░░░ -->
+<section id="approach" class="section-lg">
+  <div class="container">
+    <div class="approach-grid">
+      <div class="approach-label reveal">
+        <span class="section-index">01</span>
+        <h2 class="section-heading">Engineering<br/>Philosophy</h2>
+      </div>
+      <div class="approach-principles">
+        <div class="principle reveal">
+          <h3>Architecture before code.</h3>
+          <p>Every system begins with a clear threat model — failure modes, data consistency boundaries, and operational bottlenecks mapped before a single line is written. Complexity is managed through constraint, not cleverness.</p>
+        </div>
+        <div class="principle reveal">
+          <h3>Operational readiness is a feature.</h3>
+          <p>Software that works on localhost and software that survives production are two different products. Deployment pipeline, environment configuration, and failure recovery are built into the spec — not bolted on after.</p>
+        </div>
+        <div class="principle reveal">
+          <h3>The system is the product.</h3>
+          <p>Individual components are not deliverables. A working, monitored, documented system that a non-technical operator can maintain without calling the developer — that is the deliverable.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ CASE STUDIES ░░░ -->
+<section id="work" class="section-xl">
+  <div class="container">
+    <div class="work-header reveal">
+      <span class="section-index">02</span>
+      <h2 class="section-heading">Engineering Case Studies</h2>
+    </div>
+
+    <!-- ── Case Study 01: VSaaS ── -->
+    <article class="case-study reveal">
+      <div class="cs-meta">
+        <span class="cs-index">01</span>
+        <div class="cs-tags">
+          <span>Cloud Infrastructure</span>
+          <span>Video Processing</span>
+          <span>Mobile</span>
+        </div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-result">
+          Achieved sub-2-second live feed latency with a resilient offline queue guaranteeing <strong>zero archive frame loss</strong> across unstable network conditions.
+        </div>
+        <h3 class="cs-title">VSaaS — Video Surveillance as a Service</h3>
+        <div class="cs-narrative">
+          <div class="cs-block">
+            <h4>The Constraint</h4>
+            <p>RTSP camera networks installed in retail environments operate over consumer-grade Wi-Fi — connections that drop, degrade, and recover unpredictably throughout the day. A naive streaming pipeline drops footage whenever connectivity lapses. The client requirement was unambiguous: zero frame loss in the historical archive, with live feeds that immediately snap back to real-time on reconnection.</p>
+          </div>
+          <div class="cs-block">
+            <h4>Engineering Architecture</h4>
+            <p>A Python bridge process ingests raw RTSP feeds and operates two simultaneous FFmpeg encoding pipelines: a rolling 2-second HLS playlist for live consumption, and 60-second <code>.ts</code> segment files for archival chunking. An intelligent thread-safe queue intercepts the upload path. During network outages, segments cache locally and are flushed to MinIO object storage in strict temporal order once connectivity resumes — preserving timeline integrity without operator intervention.</p>
+            <p>Live feeds intentionally discard stale frames during outages rather than serve delayed footage, ensuring the live view represents reality the moment it returns. The mobile application, built with React Native and Expo, stitches daily chunk sequences into continuous playback timelines dynamically queried from Supabase PostgreSQL metadata.</p>
+          </div>
+          <div class="cs-stack">
+            <h4>Stack</h4>
+            <p>Python · FFmpeg · HLS/RTSP · MinIO S3 · Supabase (PostgreSQL) · React Native · Expo · expo-av · Docker Compose</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ── Case Study 02: RSManager ── -->
+    <article class="case-study reveal">
+      <div class="cs-meta">
+        <span class="cs-index">02</span>
+        <div class="cs-tags">
+          <span>Enterprise SaaS</span>
+          <span>POS System</span>
+          <span>Full-Stack</span>
+        </div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-result">
+          Replaced fragmented paper-based and spreadsheet workflows with a unified POS + repair management system, consolidating <strong>four operational roles</strong> under role-based access control.
+        </div>
+        <h3 class="cs-title">RSManager — Repair Shop & Point of Sale Platform</h3>
+        <div class="cs-narrative">
+          <div class="cs-block">
+            <h4>The Constraint</h4>
+            <p>Electronics repair shops operate across at least four distinct operational surfaces simultaneously: customer checkout (POS), device repair tracking, inventory management, and supplier procurement. Each surface had its own informal system — receipts, notebooks, spreadsheets — producing reconciliation errors, inventory blindspots, and no unified customer history. A single platform needed to serve a non-technical owner, a technician on the floor, and a cashier at the counter without training overhead.</p>
+          </div>
+          <div class="cs-block">
+            <h4>Engineering Architecture</h4>
+            <p>The backend is a FastAPI service with asynchronous SQLAlchemy ORM on PostgreSQL, secured with JWT authentication and bcrypt-hashed credentials. Four role tiers — Owner, Manager, Technician, Cashier — enforce API-level permission boundaries, not UI-level hiding. The POS module supports barcode scanning, trade-in discounts, custom line items, and thermal receipt output via python-escpos. Repair jobs move through a configurable Kanban pipeline (Received → Diagnosed → Awaiting Parts → Ready → Collected) with timestamped audit logs. Inventory management enforces configurable low-stock thresholds and auto-generates supplier purchase orders.</p>
+            <p>The frontend is a React + Vite application using TypeScript, TailwindCSS, and Zustand for global state. The full application bundles into a portable offline distribution for shops without reliable internet.</p>
+          </div>
+          <div class="cs-stack">
+            <h4>Stack</h4>
+            <p>FastAPI · Python · SQLAlchemy (Async) · PostgreSQL · JWT · bcrypt · ReportLab · python-escpos · React · TypeScript · Vite · TailwindCSS · Zustand</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ── Case Study 03: HCMonitor ── -->
+    <article class="case-study reveal">
+      <div class="cs-meta">
+        <span class="cs-index">03</span>
+        <div class="cs-tags">
+          <span>IoT Systems</span>
+          <span>Mobile Engineering</span>
+          <span>Real-Time Data</span>
+        </div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-result">
+          Designed end-to-end IoT-to-mobile telemetry pipeline delivering <strong>real-time pediatric health vitals</strong> to parents with configurable threshold alerting and AI-assisted interpretation.
+        </div>
+        <h3 class="cs-title">HCMonitor — IoT Wearable Health Monitoring System</h3>
+        <div class="cs-narrative">
+          <div class="cs-block">
+            <h4>The Constraint</h4>
+            <p>A custom hardware wearable device collects continuous biometric data from children — body temperature and GPS coordinates — and must surface that data to a parent's phone with no perceptible lag. The challenge is bridging the hardware-to-cloud-to-mobile data path reliably while keeping the parent-facing interface simple enough to require no documentation. Abnormal readings must trigger immediate, context-aware alerts before the parent checks the screen.</p>
+          </div>
+          <div class="cs-block">
+            <h4>Engineering Architecture</h4>
+            <p>Sensor data from the wearable transmits wirelessly to a cloud ingestion layer. The React Native mobile application — built with Expo SDK 54, React Navigation v7, and TypeScript — provides a live dashboard rendering temperature history as time-series charts (react-native-chart-kit) and real-time GPS position on an interactive map (react-native-maps). An AI chatbot interface interprets raw readings in plain language, allowing parents to ask health-context questions without needing medical literacy. The application supports multiple registered devices under one parent account, with a PIN-secured authentication context.</p>
+          </div>
+          <div class="cs-stack">
+            <h4>Stack</h4>
+            <p>React Native · Expo SDK 54 · TypeScript · React Navigation v7 · expo-location · react-native-maps · react-native-chart-kit · EAS Build · IoT sensor integration · AI API</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ── Case Study 04: JanaKids ── -->
+    <article class="case-study reveal">
+      <div class="cs-meta">
+        <span class="cs-index">04</span>
+        <div class="cs-tags">
+          <span>E-Commerce</span>
+          <span>Zero-Cost Deployment</span>
+          <span>Algeria Market</span>
+        </div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-result">
+          Shipped a production-live e-commerce platform covering <strong>all 58 Algerian wilayas</strong> with dynamic shipping rules and real-time order management — with zero recurring server costs.
+        </div>
+        <h3 class="cs-title">JanaKids — Algerian Market E-Commerce Platform</h3>
+        <div class="cs-narrative">
+          <div class="cs-block">
+            <h4>The Constraint</h4>
+            <p>Algerian e-commerce operates under specific logistical constraints: shipping costs vary per wilaya (province) and delivery mode (desk vs. domicile), commune-level address granularity is required for courier handoff, and many shop operators have no server administration knowledge. The client needed a system that a non-technical operator could launch publicly in under five minutes from a Windows laptop — without monthly hosting fees, DNS configuration, or port-forwarding.</p>
+          </div>
+          <div class="cs-block">
+            <h4>Engineering Architecture</h4>
+            <p>A Flask 3.0 application serves a customer-facing landing page and a secure admin dashboard. Orders capture the full Algerian address hierarchy — wilaya, commune, delivery preference — from a client-side dataset of all 58 wilayas and their associated communes embedded in JavaScript. Admin-configurable shipping rules set per-wilaya delivery prices through the dashboard without touching code. A Waitress WSGI server runs behind Nginx as a local reverse proxy. A single-command Cloudflare Tunnel generates an authenticated public HTTPS URL on demand, eliminating all infrastructure cost.</p>
+          </div>
+          <div class="cs-stack">
+            <h4>Stack</h4>
+            <p>Flask 3.0 · Python 3.10 · SQLAlchemy · SQLite · Waitress WSGI · Nginx · Cloudflare Tunnel · HTML/CSS/JS</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ── Case Study 05: DocsGuards ── -->
+    <article class="case-study reveal">
+      <div class="cs-meta">
+        <span class="cs-index">05</span>
+        <div class="cs-tags">
+          <span>Healthcare Ops</span>
+          <span>Algorithm Design</span>
+          <span>Institutional Tool</span>
+        </div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-result">
+          Eliminated scheduling bias and holiday-assignment disputes across medical on-call rosters by implementing a <strong>stateful fairness-guaranteed round-robin algorithm</strong> with historical memory.
+        </div>
+        <h3 class="cs-title">DocsGuards — Medical On-Call Scheduling Engine</h3>
+        <div class="cs-narrative">
+          <div class="cs-block">
+            <h4>The Constraint</h4>
+            <p>Hospital on-call scheduling is contentious territory: doctors track who was last assigned a major holiday, who has been on leave, and whether the standard-night pool is being treated fairly versus the weekend pool. Manual spreadsheet scheduling introduces implicit bias, and any mistake in fairness tracking creates institutional conflict. The system needed mathematically provable fairness, not just perceived fairness.</p>
+          </div>
+          <div class="cs-block">
+            <h4>Engineering Architecture</h4>
+            <p>A custom continuous round-robin queuing engine maintains separate state machines for Standard (weekday night) and Weekend pools. The algorithm enforces a hard rule: no doctor receives a second assignment until every eligible, non-leave doctor has received one — across both single-night and multi-day scheduling horizons. A Holiday Memory Engine stores per-holiday assignment history, ensuring the same named holiday (Eid Al-Adha, National Day) rotates equitably across the full pool over multi-year periods. Leave window checks transparently skip unavailable doctors without corrupting their queue position. Schedules export to dynamically generated, colour-coded Excel files via openpyxl for institutional distribution.</p>
+          </div>
+          <div class="cs-stack">
+            <h4>Stack</h4>
+            <p>Python 3.8+ · Flask · Custom Round-Robin State Engine · openpyxl · SQLite · HTML/CSS (Inter)</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ░░░ STACK SIGNAL ░░░ -->
+<section id="capabilities" class="section-lg border-top">
+  <div class="container">
+    <div class="caps-grid">
+      <div class="caps-label reveal">
+        <span class="section-index">03</span>
+        <h2 class="section-heading">Technical<br/>Capabilities</h2>
+      </div>
+      <div class="caps-body">
+        <div class="cap-row reveal">
+          <span class="cap-category">Backend Systems</span>
+          <span class="cap-detail">Python · FastAPI · Flask · SQLAlchemy · PostgreSQL · SQLite · JWT · REST API design · Async processing</span>
+        </div>
+        <div class="cap-row reveal">
+          <span class="cap-category">Frontend & Mobile</span>
+          <span class="cap-detail">React · TypeScript · Vite · Zustand · React Native · Expo · EAS Build · React Navigation</span>
+        </div>
+        <div class="cap-row reveal">
+          <span class="cap-category">Infrastructure</span>
+          <span class="cap-detail">Docker · Nginx · Cloudflare · MinIO (S3-compatible) · Supabase · FFmpeg · HLS/RTSP pipelines</span>
+        </div>
+        <div class="cap-row reveal">
+          <span class="cap-category">Systems Design</span>
+          <span class="cap-detail">Offline-first architecture · Role-based access control · Event queuing · IoT telemetry · Real-time data pipelines · Algorithm design</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ CONTACT ░░░ -->
+<section id="contact" class="section-xl border-top">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <span class="section-index">04</span>
+        <h2 class="section-heading">Start an<br/>Engagement</h2>
+        <p class="contact-note">Available for project-based freelance engagements and long-term technical partnerships. Currently based in Algeria, working with clients globally.</p>
+        <div class="contact-detail">
+          <div class="contact-row">
+            <span class="contact-label">Response time</span>
+            <span class="contact-val">Within 24 hours</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Availability</span>
+            <span class="contact-val status-open">Open to work</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">GitHub</span>
+            <a href="https://github.com/Ohsama" target="_blank" rel="noopener" class="contact-link">github.com/Ohsama</a>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="field-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" />
+          </div>
+          <div class="field-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" />
+          </div>
+        </div>
+        <div class="field-group">
+          <label for="scope">Engagement type</label>
+          <select id="scope" name="scope">
+            <option value="" disabled selected>Select...</option>
+            <option>Backend system / API</option>
+            <option>Full-stack web platform</option>
+            <option>Mobile application</option>
+            <option>Cloud infrastructure</option>
+            <option>Technical audit / consultation</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="brief">Project brief</label>
+          <textarea id="brief" name="brief" rows="5" placeholder="Describe the system you need built — its purpose, scale, constraints, and timeline."></textarea>
+        </div>
+        <button type="submit" class="cta-primary" id="formSubmit">Send Brief</button>
+        <p class="form-confirm" id="formConfirm">Received. I'll respond within 24 hours.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ░░░ FOOTER ░░░ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="footer-name">Oussama Boukhalfa</span>
+    <span class="footer-copy">Systems Engineering · Algeria · 2026</span>
+    <a href="mailto:boukhalfaoussama.dev@gmail.com" class="footer-email">boukhalfaoussama.dev@gmail.com</a>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

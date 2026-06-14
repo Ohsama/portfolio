@@ -236,6 +236,78 @@ input, textarea, select { font-family: inherit; }
 .br-mobile { display: none; }
 
 /* ═══════════════════════════
+   MARQUEE
+═══════════════════════════ */
+.marquee-section {
+  padding: var(--s4) 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+.marquee-wrapper {
+  display: flex;
+  white-space: nowrap;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.wrapper-sub {
+  opacity: 0.7;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+}
+
+.track-left {
+  animation: scrollLeft 40s linear infinite;
+}
+
+.track-right {
+  animation: scrollRight 40s linear infinite;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 var(--s4);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.wrapper-sub .marquee-item {
+  font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  text-transform: none;
+}
+
+.dot {
+  color: var(--border);
+  margin-left: calc(var(--s4) * 2);
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes scrollRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* ═══════════════════════════
    APPROACH
 ═══════════════════════════ */
 .approach-grid {

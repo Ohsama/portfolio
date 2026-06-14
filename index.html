@@ -108,6 +108,9 @@
           </div>
         </div>
       </div>
+      <div class="cs-visual">
+        <img src="screenshots/VSaaS.jpeg" alt="VSaaS Architecture" />
+      </div>
     </article>
 
     <!-- ── Case Study 02: RSManager ── -->
@@ -141,6 +144,9 @@
           </div>
         </div>
       </div>
+      <div class="cs-visual">
+        <img src="screenshots/repairshopmanager.PNG" alt="RSManager Dashboard" />
+      </div>
     </article>
 
     <!-- ── Case Study 03: HCMonitor ── -->
@@ -173,37 +179,43 @@
           </div>
         </div>
       </div>
+      <div class="cs-visual">
+        <img src="screenshots/hcmonitor3.jpg" alt="HCMonitor Mobile Application" />
+      </div>
     </article>
 
-    <!-- ── Case Study 04: JanaKids ── -->
+    <!-- ── Case Study 04: DZ Lead Gen Pro ── -->
     <article class="case-study reveal">
       <div class="cs-meta">
         <span class="cs-index">04</span>
         <div class="cs-tags">
-          <span>E-Commerce</span>
-          <span>Zero-Cost Deployment</span>
-          <span>Algeria Market</span>
+          <span>Data Engineering</span>
+          <span>Automation</span>
+          <span>Lead Generation</span>
         </div>
       </div>
       <div class="cs-body">
         <div class="cs-result">
-          Shipped a production-live e-commerce platform covering <strong>all 58 Algerian wilayas</strong> with dynamic shipping rules and real-time order management — with zero recurring server costs.
+          Automated extraction of Google Maps leads for <strong>dz_schools platform</strong>, bypassing dynamic anti-bot measures to build a comprehensive database of Algerian private schools.
         </div>
-        <h3 class="cs-title">JanaKids — Algerian Market E-Commerce Platform</h3>
+        <h3 class="cs-title">DZ Lead Gen Pro — Automated Maps Scraper</h3>
         <div class="cs-narrative">
           <div class="cs-block">
             <h4>The Constraint</h4>
-            <p>Algerian e-commerce operates under specific logistical constraints: shipping costs vary per wilaya (province) and delivery mode (desk vs. domicile), commune-level address granularity is required for courier handoff, and many shop operators have no server administration knowledge. The client needed a system that a non-technical operator could launch publicly in under five minutes from a Windows laptop — without monthly hosting fees, DNS configuration, or port-forwarding.</p>
+            <p>The client needed a comprehensive database of private schools across all 58 Algerian wilayas, specifically targeting institutions without existing websites. Manual data entry was unfeasible, and standard scraping scripts were immediately blocked by Google Maps' dynamic loading algorithms, infinite scroll behaviors, and stringent anti-bot measures.</p>
           </div>
           <div class="cs-block">
             <h4>Engineering Architecture</h4>
-            <p>A Flask 3.0 application serves a customer-facing landing page and a secure admin dashboard. Orders capture the full Algerian address hierarchy — wilaya, commune, delivery preference — from a client-side dataset of all 58 wilayas and their associated communes embedded in JavaScript. Admin-configurable shipping rules set per-wilaya delivery prices through the dashboard without touching code. A Waitress WSGI server runs behind Nginx as a local reverse proxy. A single-command Cloudflare Tunnel generates an authenticated public HTTPS URL on demand, eliminating all infrastructure cost.</p>
+            <p>An asynchronous Python application leverages the Playwright library to launch a headed Chromium browser with automation-controlled flags disabled, effectively mimicking human traversal patterns. The scraper navigates region-by-region, programmatically handling consent screens and triggering deliberate scroll events to force dynamic payload rendering. A Streamlit frontend provides a clean, responsive UI for non-technical users to configure parameters such as target wilayas, execution delays, and exclusion filters, subsequently generating a clean CSV output.</p>
           </div>
           <div class="cs-stack">
             <h4>Stack</h4>
-            <p>Flask 3.0 · Python 3.10 · SQLAlchemy · SQLite · Waitress WSGI · Nginx · Cloudflare Tunnel · HTML/CSS/JS</p>
+            <p>Python · Playwright (Async) · Streamlit · Pandas · asyncio</p>
           </div>
         </div>
+      </div>
+      <div class="cs-visual">
+        <img src="screenshots/11.03.2026_13.45.55_REC.png" alt="DZ Lead Gen Pro Streamlit Interface" />
       </div>
     </article>
 
@@ -236,6 +248,9 @@
             <p>Python 3.8+ · Flask · Custom Round-Robin State Engine · openpyxl · SQLite · HTML/CSS (Inter)</p>
           </div>
         </div>
+      </div>
+      <div class="cs-visual">
+        <img src="screenshots/docsguard.jpg" alt="DocsGuards Scheduling Interface" />
       </div>
     </article>
 

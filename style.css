@@ -789,3 +789,61 @@ input, textarea, select { font-family: inherit; }
   .reveal { opacity: 1; transform: none; }
   .cta-primary { background: #000; }
 }
+
+/* ═══════════════════════════
+   I18N & RTL SUPPORT
+═══════════════════════════ */
+.lang-switcher {
+  margin-left: var(--s4);
+}
+[dir="rtl"] .lang-switcher {
+  margin-left: 0;
+  margin-right: var(--s4);
+}
+.lang-select {
+  background: transparent;
+  color: var(--text-sub);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.8125rem;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.2s, border-color 0.2s;
+}
+.lang-select:hover {
+  color: var(--text);
+  border-color: var(--text-sub);
+}
+.lang-select option {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Force LTR on marquee to prevent animation break */
+.marquee-section {
+  direction: ltr;
+}
+
+/* RTL Layout Adjustments */
+[dir="rtl"] {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+[dir="rtl"] .hero-eyebrow::before {
+  margin-right: 0;
+  margin-left: 12px;
+}
+[dir="rtl"] .cs-result {
+  border-left: none;
+  border-right: 2px solid var(--accent);
+  padding-left: 0;
+  padding-right: var(--s4);
+}
+[dir="rtl"] .status-open::before {
+  margin-right: 0;
+  margin-left: var(--s2);
+}
+[dir="rtl"] .nav-anchors {
+  flex-direction: row;
+}

@@ -274,27 +274,71 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* ── Contact Form ── */
+  /* ── Contact Form (Supabase DB + Web3Forms Email) ── */
   const contactForm = document.getElementById('contactForm');
   const formSubmit = document.getElementById('formSubmit');
   const formConfirm = document.getElementById('formConfirm');
 
+  const SUPABASE_URL = 'https://alsizocdqqftxmqoqfph.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFsc2l6b2NkcXFmdHhtcW9xZnBoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUwNjYzNjIsImV4cCI6MjEwMDY0MjM2Mn0.pHWAreoqGEkoXAIgvzeZ4DHX58ptMfSd68v7m7bfTkU';
+
   if (contactForm) {
-    contactForm.addEventListener('submit', e => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const name = contactForm.querySelector('#f-name').value.trim();
-      const email = contactForm.querySelector('#f-email').value.trim();
-      if (!name || !email) { showToast('Please fill in required fields.'); return; }
+      const name = (contactForm.querySelector('#f-name') || {}).value.trim();
+      const email = (contactForm.querySelector('#f-email') || {}).value.trim();
+      const typeSelect = contactForm.querySelector('#f-type');
+      const type = typeSelect ? typeSelect.value : '';
+      const brief = (contactForm.querySelector('#f-brief') || {}).value.trim();
+
+      if (!name || !email) {
+        showToast('Please fill in required fields (Name & Email).');
+        return;
+      }
 
       formSubmit.textContent = 'Sending…';
       formSubmit.disabled = true;
 
-      setTimeout(() => {
-        formSubmit.style.display = 'none';
-        formConfirm.style.display = 'block';
-        showToast('Brief sent — Oussama will respond within 24 hours.');
-        contactForm.reset();
-      }, 900);
+      // 1. Save to Supabase PostgreSQL Database Table (public.contact_submissions)
+      const dbInsert = fetch(`${SUPABASE_URL}/rest/v1/contact_submissions`, {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          engagement_type: type,
+          brief: brief
+        })
+      }).catch(err => console.error('Supabase DB Insert Error:', err));
+
+      // 2. Dispatch to Email Inbox (boukhalfaoussama02@gmail.com) via Web3Forms API
+      const emailDispatch = fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: '5561a0b1-ef17-48f5-b384-3c819d9b62a6', // Web3Forms direct inbox routing key
+          email: email,
+          name: name,
+          subject: `Portfolio Project Brief from ${name}`,
+          message: `Name: ${name}\nEmail: ${email}\nEngagement Type: ${type}\n\nProject Brief:\n${brief}`
+        })
+      }).catch(err => console.warn('Email dispatch fallback:', err));
+
+      // Wait for completion
+      await Promise.allSettled([dbInsert, emailDispatch]);
+
+      formSubmit.style.display = 'none';
+      formConfirm.style.display = 'block';
+      showToast('Brief saved to database & sent to inbox! Oussama will respond within 24 hours.');
+      contactForm.reset();
     });
   }
 

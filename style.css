@@ -615,6 +615,62 @@ html[data-theme="beige"] .hero-photo-badge {
 .hero-photo-badge-label { font-size: 0.6875rem; color: var(--text-3); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px; }
 .hero-photo-badge-val   { font-size: 0.9375rem; font-weight: 700; color: var(--text-1); }
 
+/* Floating Glass Social Links Bar (Anchored between hero title and profile image) */
+.hero-social-floating {
+  position: absolute;
+  top: 50%;
+  left: -24px;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: 8px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-full);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  transition: background 0.45s, border-color 0.35s, box-shadow 0.35s;
+}
+
+html[data-theme="beige"] .hero-social-floating {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.7) inset, 0 8px 32px rgba(100, 80, 50, 0.12);
+}
+
+.hero-social-floating a {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-3);
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  transition: color 0.2s, background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.hero-social-floating a:hover {
+  color: var(--amber);
+  background: var(--amber-dim);
+  border-color: var(--amber-border);
+  transform: scale(1.1);
+}
+
+@media (max-width: 900px) {
+  .hero-social-floating {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    flex-direction: row;
+    width: fit-content;
+    margin: var(--space-4) auto 0;
+  }
+}
+
 /* ─────────────────────────────────────────────
    MARQUEE
    ───────────────────────────────────────────── */

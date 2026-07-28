@@ -1,507 +1,377 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oussama Boukhalfa — Systems Engineer & SaaS Architect</title>
-  <meta name="description" content="Production-grade systems engineering — cloud video pipelines, delivery logistics platforms, and enterprise SaaS." />
+  <meta name="description" content="Production-grade systems engineering: cloud video surveillance, delivery logistics platforms, enterprise SaaS, IoT and automation." />
   <meta name="author" content="Oussama Boukhalfa" />
   <meta property="og:title" content="Oussama Boukhalfa — Systems Engineer & SaaS Architect" />
-  <meta property="og:description" content="Production-grade backend systems, cloud video pipelines, delivery logistics platforms, and full-stack SaaS." />
+  <meta property="og:description" content="Production-grade backend systems, cloud video pipelines, delivery logistics, and multi-tenant SaaS engineered at scale." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=4.0" />
-  <script src="translations.js?v=4.0"></script>
-  <script src="i18n.js?v=4.0"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=5.0" />
+  <script src="theme.js?v=5.0"></script>
+  <script src="translations.js?v=5.0"></script>
+  <script src="i18n.js?v=5.0"></script>
 </head>
 <body>
 
-<div class="glass-mesh-overlay"></div>
+<div id="theme-ripple"></div>
 
-<!-- ░░░ FLOATING GLASS NAV ░░░ -->
-<header id="site-header">
-  <nav class="nav-container">
-    <div class="nav-brand">
-      <div class="nav-logo-mark">OB</div>
-      <a href="#top" class="nav-wordmark">Oussama Boukhalfa</a>
+<!-- ░░ NAVIGATION ░░ -->
+<header id="site-nav">
+  <nav class="nav-pill">
+    <div class="nav-logo">
+      <div class="nav-monogram">OB</div>
+      <span class="nav-name">Oussama Boukhalfa</span>
     </div>
-    <ul class="nav-anchors">
+    <ul class="nav-links">
       <li><a href="#work" data-i18n="nav_work">Work</a></li>
       <li><a href="#approach" data-i18n="nav_approach">Philosophy</a></li>
       <li><a href="#terminal-section" data-i18n="nav_terminal">Terminal</a></li>
-      <li><a href="#capabilities" data-i18n="nav_capabilities">Capabilities</a></li>
+      <li><a href="#capabilities" data-i18n="nav_capabilities">Stack</a></li>
       <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
     </ul>
-    <div class="nav-actions">
-      <select id="lang-select" class="lang-select">
-        <option value="en" data-i18n="lang_en">EN</option>
-        <option value="fr" data-i18n="lang_fr">FR</option>
-        <option value="de" data-i18n="lang_de">DE</option>
-        <option value="ar" data-i18n="lang_ar">عربية</option>
+    <div class="nav-right">
+      <select id="lang-select">
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+        <option value="de">DE</option>
+        <option value="ar">AR</option>
       </select>
-      <a href="#contact" class="nav-cta" data-i18n="nav_contact">Hire Oussama</a>
+      <button id="theme-toggle" aria-label="Toggle Theme" title="Toggle theme (Dark / Beige)">
+        <!-- Moon Icon for switching to Dark -->
+        <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <!-- Sun Icon for switching to Light/Beige -->
+        <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="#contact" class="nav-hire" data-i18n="nav_hire">Hire Oussama</a>
     </div>
   </nav>
 </header>
 
-<!-- ░░░ HERO SECTION ░░░ -->
-<main id="top">
+<!-- ░░ HERO ░░ -->
 <section id="hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-status-pill reveal">
-        <span data-i18n="hero_availability">Engineering Availability · Direct Engagements & Partnerships</span>
+  <div class="container" style="display:contents;">
+
+    <div class="hero-left container reveal">
+      <!-- Availability tag — no dot, no status gimmick -->
+      <div class="hero-availability">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span data-i18n="hero_availability">Open to engineering engagements</span>
       </div>
-      <p class="hero-eyebrow reveal" data-i18n="hero_eyebrow">Systems Engineering · Full-Stack · SaaS Architect</p>
-      <h1 class="hero-headline reveal" data-i18n="hero_headline">
-        I ship infrastructure<br class="br-desktop" /> that holds<br class="br-mobile" /> under pressure.
+
+      <p class="hero-eyebrow reveal reveal-delay-1" data-i18n="hero_eyebrow">Systems Engineering · Full-Stack · SaaS Architecture</p>
+
+      <h1 class="hero-headline reveal reveal-delay-2" data-i18n="hero_headline">
+        Building systems<br />that <em>hold</em> under<br />real-world pressure.
       </h1>
-      <p class="hero-sub reveal" data-i18n="hero_sub">
-        Production-grade backend systems, cloud-native video pipelines, and multi-tenant platforms — engineered to perform reliably at scale.
+
+      <p class="hero-sub reveal reveal-delay-3" data-i18n="hero_sub">
+        Production-grade backend infrastructure, cloud video pipelines, hyperlocal delivery platforms, and enterprise SaaS — engineered with discipline and shipped with care.
       </p>
-      <div class="hero-actions reveal">
-        <a href="#work" class="btn-primary" data-i18n="hero_cta">Review Case Studies</a>
-        <a href="#terminal-section" class="btn-glass" data-i18n="hero_cta_alt">Open Glass Terminal</a>
+
+      <div class="hero-ctas reveal reveal-delay-4">
+        <a href="#work" class="btn-primary" id="hero-cta-work">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span data-i18n="hero_cta_work">View Projects</span>
+        </a>
+        <a href="#terminal-section" class="btn-ghost" id="hero-cta-term">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+          <span data-i18n="hero_cta_term">Open Terminal</span>
+        </a>
       </div>
 
-      <!-- Glass Stats Grid -->
-      <div class="hero-stats-grid reveal">
-        <div class="stat-glass-card glass-card">
-          <div class="stat-number" data-i18n="stat_1_val">Sub-2s</div>
-          <div class="stat-label" data-i18n="stat_1_lbl">Video Streaming Latency</div>
+      <!-- Metrics strip -->
+      <div class="hero-metrics reveal">
+        <div class="metric-item">
+          <div class="metric-value" data-i18n="stat_1_val">&lt;2s</div>
+          <div class="metric-label" data-i18n="stat_1_lbl">Streaming Latency</div>
         </div>
-        <div class="stat-glass-card glass-card">
-          <div class="stat-number" data-i18n="stat_2_val">0%</div>
-          <div class="stat-label" data-i18n="stat_2_lbl">Archive Frame Loss</div>
+        <div class="metric-item">
+          <div class="metric-value" data-i18n="stat_2_val">0%</div>
+          <div class="metric-label" data-i18n="stat_2_lbl">Archive Frame Loss</div>
         </div>
-        <div class="stat-glass-card glass-card">
-          <div class="stat-number" data-i18n="stat_3_val">58</div>
-          <div class="stat-label" data-i18n="stat_3_lbl">Wilayas Automated Scrape</div>
+        <div class="metric-item">
+          <div class="metric-value" data-i18n="stat_3_val">58</div>
+          <div class="metric-label" data-i18n="stat_3_lbl">Wilayas Automated</div>
         </div>
-        <div class="stat-glass-card glass-card">
-          <div class="stat-number" data-i18n="stat_4_val">4</div>
-          <div class="stat-label" data-i18n="stat_4_lbl">SaaS Roles Unified</div>
+        <div class="metric-item">
+          <div class="metric-value" data-i18n="stat_4_val">7</div>
+          <div class="metric-label" data-i18n="stat_4_lbl">Systems Shipped</div>
         </div>
       </div>
-
     </div>
+
+    <!-- Right — photo area -->
+    <div class="hero-right container reveal reveal-delay-2">
+      <div class="hero-photo-frame">
+        <!-- Replace src with your photo path when ready -->
+        <div class="hero-photo-placeholder">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <p>Your photo will appear here.<br/>Drop the image file into <code>screenshots/photo.jpg</code></p>
+        </div>
+        <!-- Uncomment and update this when you have a photo:
+        <img src="screenshots/photo.jpg" alt="Oussama Boukhalfa" />
+        -->
+      </div>
+      <!-- Floating info badge -->
+      <div class="hero-photo-badge">
+        <div class="hero-photo-badge-label">Based in</div>
+        <div class="hero-photo-badge-val">Algeria</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ░░░ MARQUEE SECTION ░░░ -->
-<section id="marquee" class="marquee-section">
-  <div class="marquee-wrapper">
-    <div class="marquee-track track-left">
-      <!-- SET 1 -->
-      <span class="marquee-item">Eliminate Paper Workflows <span class="dot">•</span></span>
-      <span class="marquee-item">Zero-Frame-Loss Video <span class="dot">•</span></span>
-      <span class="marquee-item">Real-Time Logistics & GPS <span class="dot">•</span></span>
-      <span class="marquee-item">Provable Algorithm Fairness <span class="dot">•</span></span>
-      <span class="marquee-item">Anti-Bot Data Extraction <span class="dot">•</span></span>
-      <span class="marquee-item">Multi-Tenant RBAC Security <span class="dot">•</span></span>
-      <!-- SET 2 -->
-      <span class="marquee-item">Eliminate Paper Workflows <span class="dot">•</span></span>
-      <span class="marquee-item">Zero-Frame-Loss Video <span class="dot">•</span></span>
-      <span class="marquee-item">Real-Time Logistics & GPS <span class="dot">•</span></span>
-      <span class="marquee-item">Provable Algorithm Fairness <span class="dot">•</span></span>
-      <span class="marquee-item">Anti-Bot Data Extraction <span class="dot">•</span></span>
-      <span class="marquee-item">Multi-Tenant RBAC Security <span class="dot">•</span></span>
+<!-- ░░ MARQUEE TICKER ░░ -->
+<div class="marquee-section">
+  <div class="marquee-track-wrap">
+    <div class="marquee-inner" aria-hidden="true">
+      <span class="marquee-tag">Video Surveillance Infrastructure</span><span class="marquee-sep">·</span>
+      <span class="marquee-tag">Hyperlocal Delivery Systems</span><span class="marquee-sep">·</span>
+      <span class="marquee-tag">Medical Scheduling Algorithms</span><span class="marquee-sep">·</span>
+      <span class="marquee-tag">IoT Health Telemetry</span><span class="marquee-sep">·</span>
+      <span class="marquee-tag">Enterprise POS Platforms</span><span class="marquee-sep">·</span>
+      <span class="marquee-tag">Automated Data Extraction</span><span class="marquee-sep">·</span>
+      <span class="marquee-tag">Multi-Tenant SaaS Architecture</span><span class="marquee-sep">·</span>
+      <span class="marquee-tag">Real-Time WebSocket Pipelines</span><span class="marquee-sep">·</span>
+      <span class="marquee-tag">Video Surveillance Infrastructure</span><span class="marquee-sep">·</span>
+      <span class="marquee-tag">Hyperlocal Delivery Systems</span><span class="marquee-sep">·</span>
+      <span class="marquee-tag">Medical Scheduling Algorithms</span><span class="marquee-sep">·</span>
+      <span class="marquee-tag">IoT Health Telemetry</span><span class="marquee-sep">·</span>
+      <span class="marquee-tag">Enterprise POS Platforms</span><span class="marquee-sep">·</span>
+      <span class="marquee-tag">Automated Data Extraction</span><span class="marquee-sep">·</span>
+      <span class="marquee-tag">Multi-Tenant SaaS Architecture</span><span class="marquee-sep">·</span>
+      <span class="marquee-tag">Real-Time WebSocket Pipelines</span><span class="marquee-sep">·</span>
     </div>
   </div>
-  <div class="marquee-wrapper">
-    <div class="marquee-track track-right">
-      <!-- SET 1 -->
-      <span class="marquee-item">Flutter <span class="dot">•</span></span>
-      <span class="marquee-item">Dart <span class="dot">•</span></span>
-      <span class="marquee-item">Python <span class="dot">•</span></span>
-      <span class="marquee-item">FastAPI <span class="dot">•</span></span>
-      <span class="marquee-item">React Native <span class="dot">•</span></span>
-      <span class="marquee-item">PostgreSQL <span class="dot">•</span></span>
-      <span class="marquee-item">WebSockets <span class="dot">•</span></span>
-      <span class="marquee-item">Supabase <span class="dot">•</span></span>
-      <span class="marquee-item">Docker <span class="dot">•</span></span>
-      <!-- SET 2 -->
-      <span class="marquee-item">Flutter <span class="dot">•</span></span>
-      <span class="marquee-item">Dart <span class="dot">•</span></span>
-      <span class="marquee-item">Python <span class="dot">•</span></span>
-      <span class="marquee-item">FastAPI <span class="dot">•</span></span>
-      <span class="marquee-item">React Native <span class="dot">•</span></span>
-      <span class="marquee-item">PostgreSQL <span class="dot">•</span></span>
-      <span class="marquee-item">WebSockets <span class="dot">•</span></span>
-      <span class="marquee-item">Supabase <span class="dot">•</span></span>
-      <span class="marquee-item">Docker <span class="dot">•</span></span>
-    </div>
-  </div>
-</section>
+</div>
 
-<!-- ░░░ ENGINEERING PHILOSOPHY ░░░ -->
+<!-- ░░ PHILOSOPHY / APPROACH ░░ -->
 <section id="approach">
   <div class="container">
-    <div class="section-header reveal">
-      <span class="section-index">01</span>
-      <h2 class="section-heading" data-i18n="approach_heading">Engineering Philosophy</h2>
-    </div>
-    <div class="philosophy-grid">
-      <div class="principle-card glass-card reveal">
-        <div class="principle-icon">🏛️</div>
-        <h3 data-i18n="app_p1_h">Architecture before code.</h3>
-        <p data-i18n="app_p1_p">Every system begins with a clear threat model — failure modes, data consistency boundaries, and operational bottlenecks mapped before writing code. Complexity is managed through constraint.</p>
+    <div class="approach-layout">
+
+      <div class="approach-left reveal">
+        <p class="section-label" data-i18n="approach_label">Engineering Philosophy</p>
+        <h2 class="section-title" data-i18n="approach_title">Discipline before delivery.</h2>
+        <p class="section-sub" data-i18n="approach_sub">
+          Three principles guide every system I design — from initial architecture to production handoff.
+        </p>
       </div>
-      <div class="principle-card glass-card reveal">
-        <div class="principle-icon">⚡</div>
-        <h3 data-i18n="app_p2_h">Operational readiness is a feature.</h3>
-        <p data-i18n="app_p2_p">Software that works on localhost and software that survives production are two different products. Deployment pipelines, environment configs, and failure recovery are built into the spec.</p>
+
+      <div class="approach-right">
+        <div class="principle reveal reveal-delay-1">
+          <div class="principle-num">01</div>
+          <div class="principle-title" data-i18n="principle_1_title">Architecture before code.</div>
+          <p class="principle-body" data-i18n="principle_1_body">Every system begins with a threat model. Failure modes, data consistency boundaries, and operational bottlenecks are mapped before a single line is written. Complexity is governed through deliberate constraint.</p>
+        </div>
+        <div class="principle reveal reveal-delay-2">
+          <div class="principle-num">02</div>
+          <div class="principle-title" data-i18n="principle_2_title">Operational readiness is a feature.</div>
+          <p class="principle-body" data-i18n="principle_2_body">Software that runs on localhost and software that survives production are two different products. Deployment pipelines, environment isolation, and failure recovery paths are spec requirements — not afterthoughts.</p>
+        </div>
+        <div class="principle reveal reveal-delay-3">
+          <div class="principle-num">03</div>
+          <div class="principle-title" data-i18n="principle_3_title">The system is the product.</div>
+          <p class="principle-body" data-i18n="principle_3_body">The deliverable is not a component — it is a working, monitored, documented system that a non-technical operator can run without calling the developer.</p>
+        </div>
       </div>
-      <div class="principle-card glass-card reveal">
-        <div class="principle-icon">📦</div>
-        <h3 data-i18n="app_p3_h">The system is the product.</h3>
-        <p data-i18n="app_p3_p">Individual components are not deliverables. A working, monitored, documented system that a non-technical operator can maintain without calling the developer — that is the deliverable.</p>
-      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ░░░ CASE STUDIES SHOWCASE ░░░ -->
+<!-- ░░ WORK / PROJECTS GRID ░░ -->
 <section id="work">
   <div class="container">
-    <div class="section-header reveal">
-      <span class="section-index">02</span>
-      <h2 class="section-heading" data-i18n="work_heading">Engineering Case Studies</h2>
+    <div class="work-header reveal">
+      <div>
+        <p class="section-label" data-i18n="work_label">Selected Work</p>
+        <h2 class="section-title" style="margin-bottom:0;" data-i18n="work_title">Engineering Case Studies</h2>
+      </div>
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All</button>
+        <button class="filter-btn" data-filter="cloud" data-i18n="filter_cloud">Cloud & Video</button>
+        <button class="filter-btn" data-filter="saas" data-i18n="filter_saas">SaaS</button>
+        <button class="filter-btn" data-filter="mobile" data-i18n="filter_mobile">Mobile</button>
+        <button class="filter-btn" data-filter="automation" data-i18n="filter_auto">Automation</button>
+        <button class="filter-btn" data-filter="algorithm" data-i18n="filter_algo">Algorithms</button>
+      </div>
     </div>
 
-    <!-- Filter Buttons -->
-    <div class="work-filter-bar reveal">
-      <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All Projects</button>
-      <button class="filter-btn" data-filter="cloud" data-i18n="filter_cloud">Cloud & Video</button>
-      <button class="filter-btn" data-filter="saas" data-i18n="filter_saas">Enterprise SaaS</button>
-      <button class="filter-btn" data-filter="iot" data-i18n="filter_iot">IoT & Logistics</button>
-      <button class="filter-btn" data-filter="automation" data-i18n="filter_automation">Automation & AI</button>
-      <button class="filter-btn" data-filter="engine" data-i18n="filter_engine">Algorithms</button>
-    </div>
+    <div class="projects-grid" id="projectsGrid">
 
-    <div class="case-studies-list">
-
-      <!-- Case Study 01: VSaaS -->
-      <article class="case-study-card glass-card reveal" data-category="cloud">
-        <div class="cs-info">
-          <div class="cs-badge-row">
-            <span class="cs-num">CS-01</span>
-            <span class="cs-tag">Cloud Infrastructure</span>
-            <span class="cs-tag">Video Processing</span>
-            <span class="cs-tag">Mobile</span>
-          </div>
-          <div class="cs-result-banner" data-i18n="cs1_result">
-            Achieved sub-2-second live feed latency with a resilient offline queue guaranteeing <strong>zero archive frame loss</strong> across unstable network conditions.
-          </div>
-          <h3 class="cs-title" data-i18n="cs1_title">VSaaS — Video Surveillance as a Service</h3>
-          
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_constraint">The Constraint</div>
-            <p data-i18n="cs1_constraint_p">RTSP camera networks installed in retail environments operate over consumer-grade Wi-Fi — connections that drop, degrade, and recover unpredictably throughout the day. A naive streaming pipeline drops footage whenever connectivity lapses. The client requirement was unambiguous: zero frame loss in the historical archive, with live feeds that immediately snap back to real-time on reconnection.</p>
-          </div>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_arch">Engineering Architecture</div>
-            <p data-i18n="cs1_arch_p1">A Python bridge process ingests raw RTSP feeds and operates two simultaneous FFmpeg encoding pipelines: a rolling 2-second HLS playlist for live consumption, and 60-second .ts segment files for archival chunking. An intelligent thread-safe queue intercepts the upload path. During network outages, segments cache locally and are flushed to MinIO object storage in strict temporal order once connectivity resumes.</p>
-            <p data-i18n="cs1_arch_p2" style="margin-top:8px;">Live feeds intentionally discard stale frames during outages rather than serve delayed footage. The mobile application (React Native & Expo) stitches daily chunk sequences into continuous playback timelines queried from Supabase PostgreSQL metadata.</p>
-          </div>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_stack">Stack</div>
-            <div class="cs-stack-pills">
-              <span class="cs-stack-pill">Python</span>
-              <span class="cs-stack-pill">FFmpeg</span>
-              <span class="cs-stack-pill">HLS/RTSP</span>
-              <span class="cs-stack-pill">MinIO S3</span>
-              <span class="cs-stack-pill">Supabase</span>
-              <span class="cs-stack-pill">React Native</span>
-              <span class="cs-stack-pill">Expo</span>
-              <span class="cs-stack-pill">Docker</span>
-            </div>
-          </div>
+      <!-- Card 01 — VSaaS -->
+      <article class="project-card reveal" data-category="cloud" data-project="vsaas" tabindex="0" role="button" aria-label="Open VSaaS case study">
+        <div class="card-head">
+          <span class="card-index">01</span>
+          <span class="card-cat">Cloud · Video</span>
         </div>
-
-        <div class="cs-visual-container" onclick="openLightbox('screenshots/VSaaS.jpeg', 'VSaaS — Video Surveillance Architecture')">
-          <img src="screenshots/VSaaS.jpeg" alt="VSaaS Architecture" />
-          <div class="cs-visual-overlay">
-            <span class="zoom-hint">🔍 <span data-i18n="cs_zoom_hint">Click screenshot to expand</span></span>
-          </div>
+        <div class="card-icon-wrap">
+          <!-- Camera icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </div>
+        <h3 class="card-title">VSaaS — Video Surveillance as a Service</h3>
+        <p class="card-desc">Cloud-native RTSP camera streaming platform with resilient offline archiving and sub-2-second live feed latency over unstable networks.</p>
+        <div class="card-pills">
+          <span class="card-pill">Python</span>
+          <span class="card-pill">FFmpeg</span>
+          <span class="card-pill">HLS/RTSP</span>
+          <span class="card-pill">MinIO</span>
+        </div>
+        <div class="card-expand-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          View case study
         </div>
       </article>
 
-      <!-- Case Study 02: RSManager (Rebranded & Redesigned) -->
-      <article class="case-study-card glass-card reveal" data-category="saas">
-        <div class="cs-info">
-          <div class="cs-badge-row">
-            <span class="cs-num">CS-02</span>
-            <span class="cs-tag">Enterprise SaaS</span>
-            <span class="cs-tag">POS System</span>
-            <span class="cs-tag">Redesigned UI</span>
-          </div>
-          <div class="cs-result-banner" data-i18n="cs2_result">
-            Replaced fragmented paper-based and spreadsheet workflows with a unified POS + repair management system, consolidating <strong>four operational roles</strong> under role-based access control.
-          </div>
-          <h3 class="cs-title" data-i18n="cs2_title">RSManager — Repair Shop & Point of Sale Platform</h3>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_constraint">The Constraint</div>
-            <p data-i18n="cs2_constraint_p">Electronics repair shops operate across at least four distinct operational surfaces simultaneously: customer checkout (POS), device repair tracking, inventory management, and supplier procurement. Each surface had its own informal system, producing reconciliation errors and inventory blindspots.</p>
-          </div>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_arch">Engineering Architecture</div>
-            <p data-i18n="cs2_arch_p1">The backend is a FastAPI service with asynchronous SQLAlchemy ORM on PostgreSQL, secured with JWT authentication. Four role tiers — Owner, Manager, Technician, Cashier — enforce API-level permission boundaries. The POS module supports barcode scanning, trade-in discounts, custom line items, and thermal receipt output via python-escpos.</p>
-            <p data-i18n="cs2_arch_p2" style="margin-top:8px;">The frontend is a React + Vite application using TypeScript, TailwindCSS, and Zustand for global state. Bundled into a portable offline distribution for shops without reliable internet.</p>
-          </div>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_stack">Stack</div>
-            <div class="cs-stack-pills">
-              <span class="cs-stack-pill">FastAPI</span>
-              <span class="cs-stack-pill">Python</span>
-              <span class="cs-stack-pill">PostgreSQL</span>
-              <span class="cs-stack-pill">SQLAlchemy</span>
-              <span class="cs-stack-pill">React</span>
-              <span class="cs-stack-pill">TypeScript</span>
-              <span class="cs-stack-pill">TailwindCSS</span>
-              <span class="cs-stack-pill">Zustand</span>
-            </div>
-          </div>
+      <!-- Card 02 — RSManager -->
+      <article class="project-card reveal reveal-delay-1" data-category="saas" data-project="rsmanager" tabindex="0" role="button" aria-label="Open RSManager case study">
+        <div class="card-head">
+          <span class="card-index">02</span>
+          <span class="card-cat">SaaS · POS</span>
         </div>
-
-        <div class="cs-visual-container" onclick="openLightbox('screenshots/RSMGR.PNG', 'RSManager — Rebranded Repair Shop & POS System Interface')">
-          <img src="screenshots/RSMGR.PNG" alt="RSManager Rebranded Dashboard" />
-          <div class="cs-visual-overlay">
-            <span class="zoom-hint">🔍 <span data-i18n="cs_zoom_hint">Click screenshot to expand</span></span>
-          </div>
+        <div class="card-icon-wrap">
+          <!-- Store icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3 class="card-title">RSManager — Repair Shop & POS Platform</h3>
+        <p class="card-desc">Unified POS and repair-tracking platform replacing fragmented paper workflows. Four RBAC role tiers, barcode scanning, and offline-first distribution.</p>
+        <div class="card-pills">
+          <span class="card-pill">FastAPI</span>
+          <span class="card-pill">PostgreSQL</span>
+          <span class="card-pill">React</span>
+          <span class="card-pill">TypeScript</span>
+        </div>
+        <div class="card-expand-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          View case study
         </div>
       </article>
 
-      <!-- Case Study 03: Jibli Delivery App -->
-      <article class="case-study-card glass-card reveal" data-category="iot">
-        <div class="cs-info">
-          <div class="cs-badge-row">
-            <span class="cs-num">CS-03</span>
-            <span class="cs-tag">Hyperlocal Delivery</span>
-            <span class="cs-tag">Flutter Mobile</span>
-            <span class="cs-tag">Real-Time GPS</span>
-          </div>
-          <div class="cs-result-banner" data-i18n="cs7_result">
-            Engineered a high-performance hyperlocal delivery ecosystem connecting customers, local merchants, and couriers with <strong>real-time order dispatching</strong> and live GPS tracking.
-          </div>
-          <h3 class="cs-title" data-i18n="cs7_title">Jibli — Hyperlocal Delivery & Logistics Platform</h3>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_constraint">The Constraint</div>
-            <p data-i18n="cs7_constraint_p">Hyperlocal delivery in secondary Algerian cities faces unique challenges: unmapped neighborhoods, intermittent mobile data connectivity, and rapid order dispatching during peak hours. The system required zero-latency driver routing and instant order status synchronization.</p>
-          </div>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_arch">Engineering Architecture</div>
-            <p data-i18n="cs7_arch_p">Built a tripartite delivery ecosystem using Flutter for customer & driver mobile apps and FastAPI on Supabase PostgreSQL for backend orchestration. Real-time WebSockets broadcast order state transitions instantly (Created → Accepted → Picked Up → Out for Delivery → Delivered) while live GPS streams calculate optimal courier proximity assignment.</p>
-          </div>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_stack">Stack</div>
-            <div class="cs-stack-pills">
-              <span class="cs-stack-pill">Flutter</span>
-              <span class="cs-stack-pill">Dart</span>
-              <span class="cs-stack-pill">FastAPI</span>
-              <span class="cs-stack-pill">Python</span>
-              <span class="cs-stack-pill">Supabase</span>
-              <span class="cs-stack-pill">PostgreSQL</span>
-              <span class="cs-stack-pill">WebSockets</span>
-              <span class="cs-stack-pill">GPS Tracking</span>
-            </div>
-          </div>
+      <!-- Card 03 — Jibli -->
+      <article class="project-card reveal reveal-delay-2" data-category="mobile" data-project="jibli" tabindex="0" role="button" aria-label="Open Jibli case study">
+        <div class="card-head">
+          <span class="card-index">03</span>
+          <span class="card-cat">Mobile · Logistics</span>
         </div>
-
-        <div class="cs-visual-container" onclick="openLightbox('screenshots/Jibli.jpg', 'Jibli — Hyperlocal Mobile Delivery & Logistics Application')">
-          <img src="screenshots/Jibli.jpg" alt="Jibli Delivery Mobile App Interface" />
-          <div class="cs-visual-overlay">
-            <span class="zoom-hint">🔍 <span data-i18n="cs_zoom_hint">Click screenshot to expand</span></span>
-          </div>
+        <div class="card-icon-wrap">
+          <!-- Truck/delivery icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h3 class="card-title">Jibli — Hyperlocal Delivery & Logistics</h3>
+        <p class="card-desc">City-scale delivery ecosystem with real-time WebSocket order dispatching, live GPS tracking, and tripartite mobile architecture for customers, couriers, and merchants.</p>
+        <div class="card-pills">
+          <span class="card-pill">Flutter</span>
+          <span class="card-pill">FastAPI</span>
+          <span class="card-pill">WebSockets</span>
+          <span class="card-pill">Supabase</span>
+        </div>
+        <div class="card-expand-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          View case study
         </div>
       </article>
 
-      <!-- Case Study 04: HCMonitor -->
-      <article class="case-study-card glass-card reveal" data-category="iot">
-        <div class="cs-info">
-          <div class="cs-badge-row">
-            <span class="cs-num">CS-04</span>
-            <span class="cs-tag">IoT Systems</span>
-            <span class="cs-tag">Mobile Engineering</span>
-            <span class="cs-tag">Real-Time Data</span>
-          </div>
-          <div class="cs-result-banner" data-i18n="cs3_result">
-            Designed end-to-end IoT-to-mobile telemetry pipeline delivering <strong>real-time pediatric health vitals</strong> to parents with configurable threshold alerting and AI-assisted interpretation.
-          </div>
-          <h3 class="cs-title" data-i18n="cs3_title">HCMonitor — IoT Wearable Health Monitoring System</h3>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_constraint">The Constraint</div>
-            <p data-i18n="cs3_constraint_p">A custom hardware wearable device collects continuous biometric data from children — body temperature and GPS coordinates — and must surface that data to a parent's phone with no perceptible lag. Abnormal readings must trigger immediate context-aware alerts.</p>
-          </div>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_arch">Engineering Architecture</div>
-            <p data-i18n="cs3_arch_p">Sensor data from the wearable transmits wirelessly to a cloud ingestion layer. The React Native mobile application — built with Expo SDK 54, React Navigation v7, and TypeScript — provides a live dashboard rendering temperature history as time-series charts and real-time GPS position on an interactive map. An AI chatbot interface interprets raw readings in plain language.</p>
-          </div>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_stack">Stack</div>
-            <div class="cs-stack-pills">
-              <span class="cs-stack-pill">React Native</span>
-              <span class="cs-stack-pill">Expo SDK 54</span>
-              <span class="cs-stack-pill">TypeScript</span>
-              <span class="cs-stack-pill">react-native-maps</span>
-              <span class="cs-stack-pill">Chart-Kit</span>
-              <span class="cs-stack-pill">IoT Sensors</span>
-              <span class="cs-stack-pill">AI API</span>
-            </div>
-          </div>
+      <!-- Card 04 — HCMonitor -->
+      <article class="project-card reveal" data-category="mobile" data-project="hcmonitor" tabindex="0" role="button" aria-label="Open HCMonitor case study">
+        <div class="card-head">
+          <span class="card-index">04</span>
+          <span class="card-cat">IoT · Mobile</span>
         </div>
-
-        <div class="cs-visual-container" onclick="openLightbox('screenshots/hcmonitor3.jpg', 'HCMonitor — IoT Pediatric Monitoring Mobile Interface')">
-          <img src="screenshots/hcmonitor3.jpg" alt="HCMonitor Mobile Application" />
-          <div class="cs-visual-overlay">
-            <span class="zoom-hint">🔍 <span data-i18n="cs_zoom_hint">Click screenshot to expand</span></span>
-          </div>
+        <div class="card-icon-wrap">
+          <!-- Activity / health icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3 class="card-title">HCMonitor — Wearable IoT Health Monitor</h3>
+        <p class="card-desc">End-to-end IoT-to-mobile telemetry pipeline surfacing real-time pediatric vitals to parents. Threshold alerting and AI-assisted interpretation built in.</p>
+        <div class="card-pills">
+          <span class="card-pill">React Native</span>
+          <span class="card-pill">Expo SDK 54</span>
+          <span class="card-pill">TypeScript</span>
+          <span class="card-pill">IoT Sensors</span>
+        </div>
+        <div class="card-expand-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          View case study
         </div>
       </article>
 
-      <!-- Case Study 05: DZ Lead Gen Pro -->
-      <article class="case-study-card glass-card reveal" data-category="automation">
-        <div class="cs-info">
-          <div class="cs-badge-row">
-            <span class="cs-num">CS-05</span>
-            <span class="cs-tag">Data Engineering</span>
-            <span class="cs-tag">Automation</span>
-            <span class="cs-tag">Lead Generation</span>
-          </div>
-          <div class="cs-result-banner" data-i18n="cs4_result">
-            Automated extraction of Google Maps leads for <strong>dz_schools platform</strong>, bypassing dynamic anti-bot measures to build a comprehensive database of Algerian private schools.
-          </div>
-          <h3 class="cs-title" data-i18n="cs4_title">DZ Lead Gen Pro — Automated Maps Scraper</h3>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_constraint">The Constraint</div>
-            <p data-i18n="cs4_constraint_p">The client needed a comprehensive database of private schools across all 58 Algerian wilayas. Manual data entry was unfeasible, and standard scraping scripts were immediately blocked by Google Maps' dynamic loading algorithms and anti-bot measures.</p>
-          </div>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_arch">Engineering Architecture</div>
-            <p data-i18n="cs4_arch_p">An asynchronous Python application leverages the Playwright library to launch a headed Chromium browser with automation flags disabled. The scraper navigates region-by-region handling consent screens and dynamic scroll events. A Streamlit frontend provides a clean UI to configure parameters.</p>
-          </div>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_stack">Stack</div>
-            <div class="cs-stack-pills">
-              <span class="cs-stack-pill">Python</span>
-              <span class="cs-stack-pill">Playwright (Async)</span>
-              <span class="cs-stack-pill">Streamlit</span>
-              <span class="cs-stack-pill">Pandas</span>
-              <span class="cs-stack-pill">asyncio</span>
-            </div>
-          </div>
+      <!-- Card 05 — DZ Lead Gen -->
+      <article class="project-card reveal reveal-delay-1" data-category="automation" data-project="leadgen" tabindex="0" role="button" aria-label="Open DZ Lead Gen Pro case study">
+        <div class="card-head">
+          <span class="card-index">05</span>
+          <span class="card-cat">Automation · Data</span>
         </div>
-
-        <div class="cs-visual-container" onclick="openLightbox('screenshots/11.03.2026_13.45.55_REC.png', 'DZ Lead Gen Pro — Streamlit Interface')">
-          <img src="screenshots/11.03.2026_13.45.55_REC.png" alt="DZ Lead Gen Pro Streamlit Interface" />
-          <div class="cs-visual-overlay">
-            <span class="zoom-hint">🔍 <span data-i18n="cs_zoom_hint">Click screenshot to expand</span></span>
-          </div>
+        <div class="card-icon-wrap">
+          <!-- Database/search icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <h3 class="card-title">DZ Lead Gen Pro — Automated Maps Scraper</h3>
+        <p class="card-desc">Playwright-powered Google Maps extractor that bypasses anti-bot measures to build a verified database of private schools across all 58 Algerian wilayas.</p>
+        <div class="card-pills">
+          <span class="card-pill">Python</span>
+          <span class="card-pill">Playwright</span>
+          <span class="card-pill">Streamlit</span>
+          <span class="card-pill">Pandas</span>
+        </div>
+        <div class="card-expand-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          View case study
         </div>
       </article>
 
-      <!-- Case Study 06: DocsGuards -->
-      <article class="case-study-card glass-card reveal" data-category="engine">
-        <div class="cs-info">
-          <div class="cs-badge-row">
-            <span class="cs-num">CS-06</span>
-            <span class="cs-tag">Healthcare Ops</span>
-            <span class="cs-tag">Algorithm Design</span>
-            <span class="cs-tag">Institutional Tool</span>
-          </div>
-          <div class="cs-result-banner" data-i18n="cs5_result">
-            Eliminated scheduling bias and holiday-assignment disputes across medical on-call rosters by implementing a <strong>stateful fairness-guaranteed round-robin algorithm</strong> with historical memory.
-          </div>
-          <h3 class="cs-title" data-i18n="cs5_title">DocsGuards — Medical On-Call Scheduling Engine</h3>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_constraint">The Constraint</div>
-            <p data-i18n="cs5_constraint_p">Hospital on-call scheduling is contentious territory: doctors track who was last assigned a major holiday, who has been on leave, and whether standard-night vs weekend pools are treated fairly. Manual spreadsheet scheduling introduces implicit bias.</p>
-          </div>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_arch">Engineering Architecture</div>
-            <p data-i18n="cs5_arch_p">A custom continuous round-robin queuing engine maintains separate state machines for Standard and Weekend pools. The algorithm enforces a hard rule: no doctor receives a second assignment until every eligible non-leave doctor has received one. A Holiday Memory Engine stores per-holiday history.</p>
-          </div>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_stack">Stack</div>
-            <div class="cs-stack-pills">
-              <span class="cs-stack-pill">Python 3.8+</span>
-              <span class="cs-stack-pill">Flask</span>
-              <span class="cs-stack-pill">Round-Robin Engine</span>
-              <span class="cs-stack-pill">openpyxl</span>
-              <span class="cs-stack-pill">SQLite</span>
-            </div>
-          </div>
+      <!-- Card 06 — DocsGuards -->
+      <article class="project-card reveal reveal-delay-2" data-category="algorithm" data-project="docsguard" tabindex="0" role="button" aria-label="Open DocsGuards case study">
+        <div class="card-head">
+          <span class="card-index">06</span>
+          <span class="card-cat">Algorithm · Healthcare</span>
         </div>
-
-        <div class="cs-visual-container" onclick="openLightbox('screenshots/docsguard.jpg', 'DocsGuards — Medical On-Call Roster Scheduling Engine')">
-          <img src="screenshots/docsguard.jpg" alt="DocsGuards Scheduling Interface" />
-          <div class="cs-visual-overlay">
-            <span class="zoom-hint">🔍 <span data-i18n="cs_zoom_hint">Click screenshot to expand</span></span>
-          </div>
+        <div class="card-icon-wrap">
+          <!-- Calendar / schedule icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3 class="card-title">DocsGuards — Medical On-Call Scheduler</h3>
+        <p class="card-desc">Stateful fairness-guaranteed round-robin algorithm with holiday memory, eliminating scheduling bias across medical on-call rosters.</p>
+        <div class="card-pills">
+          <span class="card-pill">Python</span>
+          <span class="card-pill">Flask</span>
+          <span class="card-pill">Round-Robin Engine</span>
+          <span class="card-pill">openpyxl</span>
+        </div>
+        <div class="card-expand-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          View case study
         </div>
       </article>
 
-      <!-- Case Study 07: DZ Schools -->
-      <article class="case-study-card glass-card reveal" data-category="saas">
-        <div class="cs-info">
-          <div class="cs-badge-row">
-            <span class="cs-num">CS-07</span>
-            <span class="cs-tag">Enterprise SaaS</span>
-            <span class="cs-tag">EdTech Platform</span>
-            <span class="cs-tag">Multi-Tenant</span>
-          </div>
-          <div class="cs-result-banner" data-i18n="cs6_result">
-            Engineered a unified multi-tenant SaaS platform that digitizes student enrollment, financial reconciliation, and academic tracking for private educational institutions.
-          </div>
-          <h3 class="cs-title" data-i18n="cs6_title">DZ Schools — Educational Administration Platform</h3>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_constraint">The Constraint</div>
-            <p data-i18n="cs6_constraint_p">Private schools historically run on fragmented spreadsheets and paper trails, creating severe operational bottlenecks. The objective was to build a centralized, secure administration dashboard that requires zero technical training.</p>
-          </div>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_arch">Engineering Architecture</div>
-            <p data-i18n="cs6_arch_p">A multi-tenant backend architecture isolates institutional data with strict row-level security policies. The frontend is a React app built with TypeScript, TailwindCSS, and Zustand for complex financial tables and student registries.</p>
-          </div>
-
-          <div class="cs-block">
-            <div class="cs-block-label" data-i18n="cs_stack">Stack</div>
-            <div class="cs-stack-pills">
-              <span class="cs-stack-pill">React</span>
-              <span class="cs-stack-pill">TypeScript</span>
-              <span class="cs-stack-pill">Node.js</span>
-              <span class="cs-stack-pill">PostgreSQL</span>
-              <span class="cs-stack-pill">TailwindCSS</span>
-              <span class="cs-stack-pill">Zustand</span>
-            </div>
-          </div>
+      <!-- Card 07 — DZ Schools -->
+      <article class="project-card reveal" data-category="saas" data-project="dzschools" tabindex="0" role="button" aria-label="Open DZ Schools case study">
+        <div class="card-head">
+          <span class="card-index">07</span>
+          <span class="card-cat">SaaS · EdTech</span>
         </div>
-
-        <div class="cs-visual-container" onclick="openLightbox('screenshots/11.03.2026_13.47.39_REC.png', 'DZ Schools — Educational Administration Platform Interface')">
-          <img src="screenshots/11.03.2026_13.47.39_REC.png" alt="DZ Schools Admin Dashboard" />
-          <div class="cs-visual-overlay">
-            <span class="zoom-hint">🔍 <span data-i18n="cs_zoom_hint">Click screenshot to expand</span></span>
-          </div>
+        <div class="card-icon-wrap">
+          <!-- Graduation cap icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <h3 class="card-title">DZ Schools — Educational Administration Platform</h3>
+        <p class="card-desc">Multi-tenant SaaS digitizing student enrollment, financial reconciliation, and academic tracking for private Algerian schools. PostgreSQL row-level security throughout.</p>
+        <div class="card-pills">
+          <span class="card-pill">React</span>
+          <span class="card-pill">TypeScript</span>
+          <span class="card-pill">PostgreSQL</span>
+          <span class="card-pill">Multi-Tenant</span>
+        </div>
+        <div class="card-expand-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          View case study
         </div>
       </article>
 
@@ -509,184 +379,242 @@
   </div>
 </section>
 
-<!-- ░░░ INTERACTIVE GLASS DEVELOPER TERMINAL ░░░ -->
+<!-- ░░ PROJECT DETAIL MODAL ░░ -->
+<div id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <div class="modal-panel">
+    <div class="modal-handle"></div>
+    <div class="modal-topbar">
+      <div class="modal-topbar-left">
+        <span class="modal-index" id="modalIndex"></span>
+        <span class="modal-cat-tag" id="modalCat"></span>
+      </div>
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <!-- Left: screenshot -->
+      <div class="modal-visual">
+        <img src="" alt="" id="modalScreenshot" class="modal-screenshot" onclick="openLightbox(this.src)" />
+        <div class="modal-result-callout">
+          <p id="modalResult"></p>
+        </div>
+      </div>
+      <!-- Right: detail -->
+      <div class="modal-detail">
+        <h2 class="modal-title" id="modalTitle"></h2>
+
+        <div class="modal-block">
+          <div class="modal-section-label" id="modalConstraintLabel">The Constraint</div>
+          <p class="modal-section-body" id="modalConstraint"></p>
+        </div>
+
+        <div class="modal-block">
+          <div class="modal-section-label" id="modalArchLabel">Engineering Architecture</div>
+          <p class="modal-section-body" id="modalArch1"></p>
+          <p class="modal-section-body" id="modalArch2" style="margin-top:12px;"></p>
+        </div>
+
+        <div class="modal-block">
+          <div class="modal-section-label">Stack</div>
+          <div class="modal-stack-pills" id="modalStack"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ░░ TERMINAL ░░ -->
 <section id="terminal-section">
   <div class="container">
-    <div class="terminal-card glass-card reveal">
-      <div class="terminal-header">
-        <div class="terminal-dots">
-          <span class="tdot tdot-red"></span>
-          <span class="tdot tdot-yellow"></span>
-          <span class="tdot tdot-green"></span>
+    <div class="reveal" style="text-align:center; max-width:560px; margin:0 auto var(--space-6);">
+      <p class="section-label" data-i18n="term_label">Interactive Terminal</p>
+      <h2 class="section-title" data-i18n="term_title">Explore the systems.</h2>
+      <p class="section-sub" style="margin:0 auto;" data-i18n="term_sub">Type a project name or use the quick commands below.</p>
+    </div>
+
+    <div class="terminal-wrap reveal">
+      <div class="terminal-titlebar">
+        <div class="terminal-window-controls">
+          <span class="twc twc-close"></span>
+          <span class="twc twc-min"></span>
+          <span class="twc twc-max"></span>
         </div>
-        <div class="terminal-title" data-i18n="term_title">oussama@dev-system: ~</div>
-        <div>🖥️</div>
+        <span class="terminal-label">oussama@dev-system: ~/portfolio</span>
+        <span></span>
       </div>
       <div class="terminal-body" id="termBody">
-        <div class="term-line">System initialized. Type <span style="color:#fff;">help</span> or use prompt below to execute commands.</div>
-        <form id="termForm" class="term-input-form" onsubmit="event.preventDefault(); const v=document.getElementById('termInput').value.trim(); if(v){runTermCmd(v); document.getElementById('termInput').value='';}">
-          <span class="term-prompt">oussama@dev-system:~$</span>
-          <input type="text" id="termInput" class="term-input-field" placeholder="Type command (e.g. help, jibli, vsaas)..." autocomplete="off" />
+        <div class="term-line">
+          <span class="term-prompt">oussama@dev-system</span><span class="term-host">:~$</span>
+          <span class="term-user"> portfolio --init</span>
+        </div>
+        <div class="term-output">System ready. Type <span style="color:var(--amber)">help</span> or click a quick command below.</div>
+        <form id="termForm" class="term-input-row" autocomplete="off" onsubmit="return false;">
+          <span class="term-prompt">oussama@dev-system</span><span class="term-host">:~$</span>
+          <input id="termInput" type="text" class="term-input-field" placeholder="type command..." spellcheck="false" />
         </form>
       </div>
-      <div class="terminal-quick-cmds">
-        <span style="font-size:0.8125rem; color:var(--text-dim);" data-i18n="term_quick_label">Quick Commands:</span>
-        <button class="cmd-pill" onclick="runTermCmd('help')">help</button>
+      <div class="terminal-quickbar">
+        <span class="term-quick-label">Quick:</span>
         <button class="cmd-pill" onclick="runTermCmd('whoami')">whoami</button>
-        <button class="cmd-pill" onclick="runTermCmd('jibli')">jibli</button>
         <button class="cmd-pill" onclick="runTermCmd('vsaas')">vsaas</button>
+        <button class="cmd-pill" onclick="runTermCmd('jibli')">jibli</button>
         <button class="cmd-pill" onclick="runTermCmd('rsmanager')">rsmanager</button>
         <button class="cmd-pill" onclick="runTermCmd('stack')">stack</button>
         <button class="cmd-pill" onclick="runTermCmd('contact')">contact</button>
+        <button class="cmd-pill" onclick="runTermCmd('help')">help</button>
         <button class="cmd-pill" onclick="runTermCmd('clear')">clear</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ░░░ TECHNICAL CAPABILITIES ░░░ -->
+<!-- ░░ TECHNICAL CAPABILITIES ░░ -->
 <section id="capabilities">
   <div class="container">
-    <div class="section-header reveal">
-      <span class="section-index">03</span>
-      <h2 class="section-heading" data-i18n="cap_heading">Technical Capabilities</h2>
+    <div class="reveal" style="margin-bottom:var(--space-6);">
+      <p class="section-label" data-i18n="caps_label">Technical Stack</p>
+      <h2 class="section-title" data-i18n="caps_title">Core capabilities.</h2>
     </div>
     <div class="caps-grid">
-      <div class="cap-card glass-card reveal">
-        <div class="cap-category">
-          <span class="cap-category-icon">⚙️</span>
-          <span data-i18n="cap_cat1">Backend Systems</span>
+
+      <div class="cap-card reveal">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
-        <div class="cap-items-list">
-          <span class="cap-item-badge">Python 3.12</span>
-          <span class="cap-item-badge">FastAPI</span>
-          <span class="cap-item-badge">Flask</span>
-          <span class="cap-item-badge">SQLAlchemy (Async)</span>
-          <span class="cap-item-badge">PostgreSQL</span>
-          <span class="cap-item-badge">SQLite</span>
-          <span class="cap-item-badge">JWT & RBAC</span>
-          <span class="cap-item-badge">REST APIs</span>
+        <div class="cap-title" data-i18n="cap_1_title">Backend Systems</div>
+        <div class="cap-items">
+          <span class="cap-badge">Python 3.12</span>
+          <span class="cap-badge">FastAPI</span>
+          <span class="cap-badge">Flask</span>
+          <span class="cap-badge">SQLAlchemy</span>
+          <span class="cap-badge">PostgreSQL</span>
+          <span class="cap-badge">JWT / RBAC</span>
+          <span class="cap-badge">REST APIs</span>
+          <span class="cap-badge">Async I/O</span>
         </div>
       </div>
 
-      <div class="cap-card glass-card reveal">
-        <div class="cap-category">
-          <span class="cap-category-icon">📱</span>
-          <span data-i18n="cap_cat2">Frontend & Mobile</span>
+      <div class="cap-card reveal reveal-delay-1">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
         </div>
-        <div class="cap-items-list">
-          <span class="cap-item-badge">Flutter & Dart</span>
-          <span class="cap-item-badge">React 18</span>
-          <span class="cap-item-badge">TypeScript</span>
-          <span class="cap-item-badge">Vite</span>
-          <span class="cap-item-badge">Zustand</span>
-          <span class="cap-item-badge">React Native</span>
-          <span class="cap-item-badge">Expo SDK 54</span>
-          <span class="cap-item-badge">TailwindCSS</span>
-        </div>
-      </div>
-
-      <div class="cap-card glass-card reveal">
-        <div class="cap-category">
-          <span class="cap-category-icon">☁️</span>
-          <span data-i18n="cap_cat3">Infrastructure</span>
-        </div>
-        <div class="cap-items-list">
-          <span class="cap-item-badge">Docker & Compose</span>
-          <span class="cap-item-badge">Nginx</span>
-          <span class="cap-item-badge">Cloudflare Tunnels</span>
-          <span class="cap-item-badge">MinIO (S3)</span>
-          <span class="cap-item-badge">Supabase</span>
-          <span class="cap-item-badge">WebSockets</span>
-          <span class="cap-item-badge">FFmpeg / HLS Streaming</span>
+        <div class="cap-title" data-i18n="cap_2_title">Mobile & Frontend</div>
+        <div class="cap-items">
+          <span class="cap-badge">Flutter &amp; Dart</span>
+          <span class="cap-badge">React 18</span>
+          <span class="cap-badge">TypeScript</span>
+          <span class="cap-badge">React Native</span>
+          <span class="cap-badge">Expo SDK 54</span>
+          <span class="cap-badge">Zustand</span>
+          <span class="cap-badge">Vite</span>
         </div>
       </div>
 
-      <div class="cap-card glass-card reveal">
-        <div class="cap-category">
-          <span class="cap-category-icon">📐</span>
-          <span data-i18n="cap_cat4">Systems Design</span>
+      <div class="cap-card reveal reveal-delay-2">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
         </div>
-        <div class="cap-items-list">
-          <span class="cap-item-badge">Hyperlocal Delivery & Logistics</span>
-          <span class="cap-item-badge">Offline-First Architecture</span>
-          <span class="cap-item-badge">Multi-Tenant RLS</span>
-          <span class="cap-item-badge">Thread-Safe Queuing</span>
-          <span class="cap-item-badge">IoT Telemetry</span>
-          <span class="cap-item-badge">Real-Time Data Pipelines</span>
+        <div class="cap-title" data-i18n="cap_3_title">Infrastructure</div>
+        <div class="cap-items">
+          <span class="cap-badge">Docker &amp; Compose</span>
+          <span class="cap-badge">Nginx</span>
+          <span class="cap-badge">Cloudflare</span>
+          <span class="cap-badge">MinIO (S3)</span>
+          <span class="cap-badge">Supabase</span>
+          <span class="cap-badge">WebSockets</span>
+          <span class="cap-badge">FFmpeg / HLS</span>
         </div>
       </div>
+
+      <div class="cap-card reveal reveal-delay-3">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>
+        </div>
+        <div class="cap-title" data-i18n="cap_4_title">Systems Design</div>
+        <div class="cap-items">
+          <span class="cap-badge">Offline-First Arch.</span>
+          <span class="cap-badge">Multi-Tenant RLS</span>
+          <span class="cap-badge">IoT Telemetry</span>
+          <span class="cap-badge">Event Queuing</span>
+          <span class="cap-badge">Logistics Routing</span>
+          <span class="cap-badge">Real-Time Pipelines</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ░░░ CONTACT SECTION ░░░ -->
+<!-- ░░ CONTACT ░░ -->
 <section id="contact">
   <div class="container">
-    <div class="section-header reveal">
-      <span class="section-index">04</span>
-      <h2 class="section-heading" data-i18n="contact_heading">Start an Engagement</h2>
+    <div class="reveal" style="margin-bottom:var(--space-6);">
+      <p class="section-label" data-i18n="contact_label">Get In Touch</p>
+      <h2 class="section-title" data-i18n="contact_title">Start an engagement.</h2>
+      <p class="section-sub" data-i18n="contact_sub">Available for project-based engineering work and long-term technical partnerships. Response within 24 hours.</p>
     </div>
 
-    <div class="contact-layout">
-      <!-- Left Info Glass Card -->
-      <div class="contact-info-card glass-card reveal">
-        <div>
-          <p class="contact-note" data-i18n="contact_note" style="color:var(--text-muted); font-size:1rem; margin-bottom:var(--s4);">Available for project-based engineering engagements and long-term technical partnerships.</p>
-          
-          <div class="contact-detail-list">
-            <div class="contact-detail-item">
-              <span class="contact-detail-label" data-i18n="contact_rt">Response time</span>
-              <span class="contact-detail-val" data-i18n="contact_rt_val">Within 24 hours</span>
-            </div>
-            <div class="contact-detail-item">
-              <span class="contact-detail-label" data-i18n="contact_avail">Availability</span>
-              <span class="contact-detail-val" style="color:#ffffff;" data-i18n="contact_avail_val">Direct Engagements</span>
-            </div>
-            <div class="contact-detail-item">
-              <span class="contact-detail-label">GitHub</span>
-              <a href="https://github.com/Ohsama" target="_blank" rel="noopener" class="contact-detail-val" style="color:var(--accent-link);">github.com/Ohsama</a>
-            </div>
-            <div class="contact-detail-item">
-              <span class="contact-detail-label">LinkedIn</span>
-              <a href="https://www.linkedin.com/in/oussama-it-boukhalfa/" target="_blank" rel="noopener" class="contact-detail-val" style="color:var(--accent-link);">in/oussama-it-boukhalfa</a>
-            </div>
+    <div class="contact-grid">
+      <!-- Left info panel -->
+      <div class="contact-info reveal">
+        <p class="contact-intro" data-i18n="contact_intro">Whether you need a production system built from scratch, an existing codebase audited, or a technical co-founder — let's talk.</p>
+
+        <div class="contact-details">
+          <div class="contact-row">
+            <span class="contact-row-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span data-i18n="contact_rt_label">Response time</span>
+            </span>
+            <span class="contact-row-val" data-i18n="contact_rt_val">Within 24 hours</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span data-i18n="contact_loc_label">Location</span>
+            </span>
+            <span class="contact-row-val" data-i18n="contact_loc_val">Algeria</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row-label">
+              <!-- GitHub icon -->
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </span>
+            <span class="contact-row-val"><a href="https://github.com/Ohsama" target="_blank" rel="noopener">github.com/Ohsama</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row-label">
+              <!-- LinkedIn icon -->
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </span>
+            <span class="contact-row-val"><a href="https://www.linkedin.com/in/oussama-it-boukhalfa/" target="_blank" rel="noopener">in/oussama-it-boukhalfa</a></span>
           </div>
         </div>
 
-        <button class="copy-email-btn" onclick="copyEmail()">
-          ✉️ <span data-i18n="contact_copy_btn">Copy Email Address</span>
+        <button class="copy-email-btn" id="copyEmailBtn" onclick="copyEmail()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span data-i18n="contact_copy_btn">Copy Email Address</span>
         </button>
       </div>
 
-      <!-- Right Form & Visual Comparison -->
-      <div class="contact-form-glass glass-card reveal">
-        <div class="contact-visuals-grid">
-          <div class="c-vis-wrap">
-            <img src="screenshots/tired.png" alt="Paperwork chaos" />
-            <div class="c-vis-caption" data-i18n="contact_chaos_cap">Chaos & Paper Workflows</div>
-          </div>
-          <div class="c-vis-wrap">
-            <img src="screenshots/control.png" alt="Automated control" />
-            <div class="c-vis-caption" data-i18n="contact_control_cap">System Automation & Control</div>
-          </div>
-        </div>
-
+      <!-- Right — contact form -->
+      <div class="contact-form-card reveal reveal-delay-1">
         <form id="contactForm" novalidate>
           <div class="form-group">
-            <label for="name" data-i18n="form_name">Name</label>
-            <input type="text" id="name" name="name" class="glass-input" data-i18n-placeholder="form_name_ph" placeholder="Your full name" required />
+            <label class="form-label" for="f-name" data-i18n="form_name">Name</label>
+            <input type="text" id="f-name" name="name" class="form-input" data-i18n-placeholder="form_name_ph" placeholder="Your full name" required />
           </div>
-
           <div class="form-group">
-            <label for="email" data-i18n="form_email">Email</label>
-            <input type="email" id="email" name="email" class="glass-input" data-i18n-placeholder="form_email_ph" placeholder="you@company.com" required />
+            <label class="form-label" for="f-email" data-i18n="form_email">Email</label>
+            <input type="email" id="f-email" name="email" class="form-input" data-i18n-placeholder="form_email_ph" placeholder="you@company.com" required />
           </div>
-
           <div class="form-group">
-            <label for="scope" data-i18n="form_scope">Engagement type</label>
-            <select id="scope" name="scope" class="glass-input">
-              <option value="" disabled selected data-i18n="form_scope_ph">Select engagement...</option>
+            <label class="form-label" for="f-type" data-i18n="form_type">Engagement type</label>
+            <select id="f-type" name="type" class="form-input">
+              <option value="" disabled selected data-i18n="form_type_ph">Select type...</option>
               <option data-i18n="form_opt1">Backend system / API Architecture</option>
               <option data-i18n="form_opt2">Full-stack web platform</option>
               <option data-i18n="form_opt3">Mobile application (Flutter / React Native)</option>
@@ -695,42 +623,39 @@
               <option data-i18n="form_opt6">Other</option>
             </select>
           </div>
-
           <div class="form-group">
-            <label for="brief" data-i18n="form_brief">Project brief</label>
-            <textarea id="brief" name="brief" rows="4" class="glass-input" data-i18n-placeholder="form_brief_ph" placeholder="Describe your requirements, scale, system constraints, and timeline."></textarea>
+            <label class="form-label" for="f-brief" data-i18n="form_brief">Project brief</label>
+            <textarea id="f-brief" name="brief" rows="4" class="form-input" data-i18n-placeholder="form_brief_ph" placeholder="Describe the system, constraints, and timeline."></textarea>
           </div>
-
-          <button type="submit" id="formSubmit" class="btn-primary" style="width:100%; justify-content:center;" data-i18n="form_submit">Send Project Brief</button>
-          <div id="formConfirm" class="form-confirm-msg" data-i18n="form_confirm">Brief received! Oussama will respond within 24 hours.</div>
+          <button type="submit" class="form-submit" id="formSubmit" data-i18n="form_submit">Send Project Brief</button>
+          <div class="form-confirm" id="formConfirm" data-i18n="form_confirm">Brief received! Oussama will respond within 24 hours.</div>
         </form>
       </div>
     </div>
+
   </div>
 </section>
-</main>
 
-<!-- ░░░ LIGHTBOX MODAL ░░░ -->
-<div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
-  <div class="lightbox-content" onclick="event.stopPropagation()">
-    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-    <img src="" alt="Screenshot Full view" id="lightboxImg" class="lightbox-img" />
-    <div id="lightboxCaption" style="margin-top:16px; color:var(--text-muted); font-size:0.9375rem; text-align:center;"></div>
-  </div>
+<!-- ░░ LIGHTBOX (full-screen screenshot zoom) ░░ -->
+<div id="lightbox">
+  <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close lightbox">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <img src="" alt="Full view" id="lightboxImg" />
 </div>
 
-<!-- Toast Msg -->
-<div class="toast-msg" id="toastMsg"></div>
+<!-- ░░ TOAST ░░ -->
+<div id="toast" role="status" aria-live="polite"></div>
 
-<!-- ░░░ FOOTER ░░░ -->
-<footer class="site-footer">
+<!-- ░░ FOOTER ░░ -->
+<footer>
   <div class="container footer-inner">
-    <span class="footer-name" data-i18n="footer_name">Oussama Boukhalfa</span>
-    <span class="footer-copy" data-i18n="footer_copy">Systems Engineering · Algeria · 2026</span>
+    <span class="footer-name">Oussama Boukhalfa</span>
+    <span class="footer-copy">Systems Engineering · Algeria · 2026</span>
     <a href="mailto:boukhalfaoussama02@gmail.com" class="footer-email">boukhalfaoussama02@gmail.com</a>
   </div>
 </footer>
 
-<script src="app.js?v=4.0"></script>
+<script src="app.js?v=5.0"></script>
 </body>
 </html>

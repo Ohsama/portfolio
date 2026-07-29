@@ -19,6 +19,15 @@ const translations = {
     hero_cta_work:     "View Projects",
     hero_cta_term:     "Open Terminal",
 
+    /* Hero Badge Drawer */
+    badge_loc_label:        "Based in Algeria",
+    badge_loc_val:          "Open & Ready to Relocate",
+    badge_eligibility_title:"Eligible Work & Visa Frameworks",
+    badge_item_1:           "EU Blue Card (EU / Germany / France)",
+    badge_item_2:           "Passeport Talent & Tech Visa",
+    badge_item_3:           "Skilled IT Shortage Fast-Track",
+    badge_item_4:           "Global Talent & Express Entry",
+
     /* Stats */
     stat_1_val: "&lt;2s",
     stat_1_lbl: "Streaming Latency",
@@ -71,7 +80,7 @@ const translations = {
     contact_rt_label:  "Response time",
     contact_rt_val:    "Within 24 hours",
     contact_loc_label: "Location",
-    contact_loc_val:   "Algeria",
+    contact_loc_val:   "Algeria (Open to Relocation)",
     contact_copy_btn:  "Copy Email Address",
 
     /* Form */
@@ -108,6 +117,14 @@ const translations = {
     hero_sub:          "Infrastructure backend de production, pipelines vidéo cloud, plateformes de livraison hyperlocale et SaaS d'entreprise — développés avec rigueur et livrés avec soin.",
     hero_cta_work:     "Voir les projets",
     hero_cta_term:     "Ouvrir le terminal",
+
+    badge_loc_label:        "Basé en Algérie",
+    badge_loc_val:          "Ouvert & Prêt à la Relocalisation",
+    badge_eligibility_title:"Cadres de Visa & Éligibilité",
+    badge_item_1:           "Carte Bleue Européenne (UE / Allemagne / France)",
+    badge_item_2:           "Passeport Talent & Tech Visa",
+    badge_item_3:           "Voie Rapide IT & Métiers en Tension",
+    badge_item_4:           "Global Talent & Entrée Express",
 
     stat_1_val: "&lt;2s",
     stat_1_lbl: "Latence streaming",
@@ -155,7 +172,7 @@ const translations = {
     contact_rt_label:  "Délai de réponse",
     contact_rt_val:    "Sous 24 heures",
     contact_loc_label: "Localisation",
-    contact_loc_val:   "Algérie",
+    contact_loc_val:   "Algérie (Prêt à la Relocalisation)",
     contact_copy_btn:  "Copier l'adresse email",
 
     form_name:     "Nom",
@@ -191,6 +208,14 @@ const translations = {
     hero_sub:          "Produktionsreife Backend-Infrastruktur, Cloud-Video-Pipelines, Lieferlogistik-Plattformen und Enterprise-SaaS — präzise entwickelt und zuverlässig ausgeliefert.",
     hero_cta_work:     "Projekte ansehen",
     hero_cta_term:     "Terminal öffnen",
+
+    badge_loc_label:        "Standort Algerien",
+    badge_loc_val:          "Bereit & Offen für Umzug / Relocation",
+    badge_eligibility_title:"Visa- & Arbeitsberechtigung",
+    badge_item_1:           "Blaue Karte EU (EU / Deutschland / Frankreich)",
+    badge_item_2:           "Passeport Talent & Tech Visa",
+    badge_item_3:           "Fachkräfte-Mangel IT Fast-Track",
+    badge_item_4:           "Global Talent & Express Entry",
 
     stat_1_val: "&lt;2s",
     stat_1_lbl: "Streaming-Latenz",
@@ -238,7 +263,7 @@ const translations = {
     contact_rt_label:  "Antwortzeit",
     contact_rt_val:    "Innerhalb von 24 Stunden",
     contact_loc_label: "Standort",
-    contact_loc_val:   "Algerien",
+    contact_loc_val:   "Algerien (Umzugsbereit)",
     contact_copy_btn:  "E-Mail-Adresse kopieren",
 
     form_name:     "Name",
@@ -274,6 +299,14 @@ const translations = {
     hero_sub:          "بنية تحتية خلفية عالية الأداء، معالجة الفيديو السحابية، منصات التوصيل المحلية، وأنظمة SaaS للمؤسسات — مصنوعة بانضباط وتُسلَّم باحترافية.",
     hero_cta_work:     "عرض المشاريع",
     hero_cta_term:     "فتح الترمينال",
+
+    badge_loc_label:        "مقيم في الجزائر",
+    badge_loc_val:          "جاهز ومستعد للانتقال والعمل بالخارج",
+    badge_eligibility_title:"أطر التأشيرة والعمل المؤهل",
+    badge_item_1:           "البطاقة الزرقاء الأوروبية EU Blue Card",
+    badge_item_2:           "جواز السفر الموهبة Passeport Talent",
+    badge_item_3:           "تسهيلات وظائف تكنولوجيا المعلومات المطلوبة",
+    badge_item_4:           "برامج الكفاءات العالية والنظام السريع",
 
     stat_1_val: "أقل من 2s",
     stat_1_lbl: "تأخير البث",
@@ -321,7 +354,7 @@ const translations = {
     contact_rt_label:  "وقت الرد",
     contact_rt_val:    "خلال 24 ساعة",
     contact_loc_label: "الموقع",
-    contact_loc_val:   "الجزائر",
+    contact_loc_val:   "الجزائر (جاهز للانتقال للعمل)",
     contact_copy_btn:  "نسخ البريد الإلكتروني",
 
     form_name:     "الاسم",

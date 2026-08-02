@@ -694,18 +694,17 @@ LIMIT 10;
 | 0.7 | Contact Form Dual Backend | [x] | `4b99311` |
 | 0.8 | GitHub Pages Deployment | [x] | `1540c81` |
 | 0.9 | Relocation Drawer Badge | [x] | `911c568` |
-| 1.1 | Hero Copy Rewrite | [ ] | — |
-| 1.2 | Social Proof / Testimonials | [ ] | — |
-| 1.3 | Engagement Process Section | [ ] | — |
-| 2.1 | Calendly Booking Modal | [ ] | — |
-| 2.2 | PDF Technical Spec Download | [ ] | — |
-| 3.1 | Architecture Visualizer | [ ] | — |
-| 4.1 | Magnetic Button Effect | [ ] | — |
-| 4.2 | Screenshot Hotspot Pins | [ ] | — |
-| 4.3 | Engineering Notes Section | [ ] | — |
+| 1.1 | Hero Copy Rewrite | [x] | `db68062` |
+| 1.2 | Social Proof / Testimonials | [x] | `db68062` |
+| 1.3 | Engagement Process Section | [x] | `db68062` |
+| 2.1 | Technical Audit Booking Modal | [x] | `8a25c39` |
+| 2.2 | PDF Technical Spec Download | [x] | `8a25c39` |
+| 3.1 | Architecture Visualizer | [x] | `8a25c39` |
+| 4.1 | Magnetic Button Effect | [x] | `8a25c39` |
+| 4.2 | Screenshot Hotspot Pins | [x] | `8a25c39` |
 | 5.1 | SEO Meta Tags | [ ] | — |
 | 5.2 | Performance Audit | [ ] | — |
-| 6.1 | Deployment Verification | [x] | `911c568` |
+| 6.1 | Deployment Verification | [x] | `8a25c39` |
 | 6.2 | Supabase Health Check | [x] | `4b99311` |
 
 ---

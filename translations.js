@@ -12,10 +12,10 @@ const translations = {
     nav_hire:         "Hire Oussama",
 
     /* Hero */
-    hero_availability: "Open to engineering engagements",
+    hero_availability: "Accepting High-Complexity Engagements",
     hero_eyebrow:      "Systems Engineering · Full-Stack · SaaS Architecture",
-    hero_headline:     "Building systems<br />that <em>hold</em> under<br />real-world pressure.",
-    hero_sub:          "Production-grade backend infrastructure, cloud video pipelines, hyperlocal delivery platforms, and enterprise SaaS — engineered with discipline and shipped with care.",
+    hero_headline:     "I de-risk<br /><em>complex technical</em><br />execution.",
+    hero_sub:          "Production systems that survive scale, audits, and the gap between MVP and enterprise. Backend architecture, cloud pipelines, and SaaS infrastructure \u2014 owned end-to-end.",
     hero_cta_work:     "View Projects",
     hero_cta_term:     "Open Terminal",
 
@@ -27,6 +27,29 @@ const translations = {
     badge_item_2:           "Passeport Talent & Tech Visa",
     badge_item_3:           "Skilled IT Shortage Fast-Track",
     badge_item_4:           "Global Talent & Express Entry",
+
+    /* Testimonials */
+    testimonials_label:    "Client Perspective",
+    testimonials_title:    "What partners say.",
+    testimonials_ref_text: "Detailed project references and client contacts available upon request for qualified engagements.",
+    testimonials_ref_cta:  "Request References",
+
+    /* Process */
+    process_label:            "Engagement Model",
+    process_title:            "How I work.",
+    process_sub:              "Every engagement follows a structured, low-risk delivery model. No sprint-planning theatre \u2014 just clear deliverables at each stage.",
+    process_step1_title:      "Discovery",
+    process_step1_desc:       "Requirements audit, threat model, and architecture decision record. We align on constraints, data boundaries, and success criteria before a line of code is written.",
+    process_step1_deliverable:"Deliverable: Architecture Decision Record (ADR)",
+    process_step2_title:      "Design",
+    process_step2_desc:       "System architecture diagram, data model, API contract, and deployment topology. Every design decision is documented with its rationale and trade-offs.",
+    process_step2_deliverable:"Deliverable: System Design Specification",
+    process_step3_title:      "Build",
+    process_step3_desc:       "Disciplined development against the spec. Staging environment from day one, milestone sign-offs, and no scope creep without a documented change request.",
+    process_step3_deliverable:"Deliverable: Staged, tested production-ready build",
+    process_step4_title:      "Handover",
+    process_step4_desc:       "Full technical documentation, operator runbook, environment setup guide, and post-launch monitoring. The system runs without me \u2014 that's the goal.",
+    process_step4_deliverable:"Deliverable: Runbook + Documentation Package",
 
     /* Stats */
     stat_1_val: "&lt;2s",
@@ -111,10 +134,10 @@ const translations = {
     nav_contact:      "Contact",
     nav_hire:         "Recruter Oussama",
 
-    hero_availability: "Disponible pour missions d'ingénierie",
+    hero_availability: "Disponible pour missions haute complexité",
     hero_eyebrow:      "Ingénierie Systèmes · Full-Stack · Architecture SaaS",
-    hero_headline:     "Des systèmes conçus<br />pour <em>résister</em><br />à la production.",
-    hero_sub:          "Infrastructure backend de production, pipelines vidéo cloud, plateformes de livraison hyperlocale et SaaS d'entreprise — développés avec rigueur et livrés avec soin.",
+    hero_headline:     "Je sécurise<br />l'<em>exécution technique</em><br />complexe.",
+    hero_sub:          "Des systèmes qui survivent à la mise à l'échelle, aux audits et à la transition MVP-entreprise. Architecture backend, pipelines cloud et infrastructure SaaS \u2014 pris en charge de bout en bout.",
     hero_cta_work:     "Voir les projets",
     hero_cta_term:     "Ouvrir le terminal",
 
@@ -202,10 +225,10 @@ const translations = {
     nav_contact:      "Kontakt",
     nav_hire:         "Oussama engagieren",
 
-    hero_availability: "Offen für Engineering-Projekte",
+    hero_availability: "Verfügbar für hochkomplexe Engineering-Projekte",
     hero_eyebrow:      "Systems Engineering · Full-Stack · SaaS-Architekt",
-    hero_headline:     "Systeme, die<br /><em>standhalten</em> —<br />auch unter Last.",
-    hero_sub:          "Produktionsreife Backend-Infrastruktur, Cloud-Video-Pipelines, Lieferlogistik-Plattformen und Enterprise-SaaS — präzise entwickelt und zuverlässig ausgeliefert.",
+    hero_headline:     "Ich reduziere<br />technisches <em>Ausführungsrisiko</em><br />für Ventures.",
+    hero_sub:          "Produktionssysteme, die Skalierung, Audits und den Sprung vom MVP zum Enterprise überleben. Backend-Architektur, Cloud-Pipelines und SaaS-Infrastruktur \u2014 end-to-end verantwortet.",
     hero_cta_work:     "Projekte ansehen",
     hero_cta_term:     "Terminal öffnen",
 
@@ -216,6 +239,29 @@ const translations = {
     badge_item_2:           "Passeport Talent & Tech Visa",
     badge_item_3:           "Fachkräfte-Mangel IT Fast-Track",
     badge_item_4:           "Global Talent & Express Entry",
+
+    /* Testimonials */
+    testimonials_label:    "Kundenperspektive",
+    testimonials_title:    "Was Partner sagen.",
+    testimonials_ref_text: "Detaillierte Projektreferenzen und Kundenkontakte auf Anfrage für qualifizierte Engagements erhältlich.",
+    testimonials_ref_cta:  "Referenzen Anfordern",
+
+    /* Process */
+    process_label:            "Engagement-Modell",
+    process_title:            "Wie ich arbeite.",
+    process_sub:              "Jedes Engagement folgt einem strukturierten, risikoarmen Liefermodell. Kein Sprint-Theater \u2014 nur klare Deliverables in jeder Phase.",
+    process_step1_title:      "Discovery",
+    process_step1_desc:       "Anforderungsaudit, Bedrohungsmodell und Architekturentscheidungsprotokoll. Wir stimmen uns vor dem ersten Code ab.",
+    process_step1_deliverable:"Deliverable: Architecture Decision Record (ADR)",
+    process_step2_title:      "Design",
+    process_step2_desc:       "Systemarchitekturdiagramm, Datenmodell, API-Vertrag und Deployment-Topologie — vollständig dokumentiert.",
+    process_step2_deliverable:"Deliverable: System Design Spezifikation",
+    process_step3_title:      "Build",
+    process_step3_desc:       "Disziplinierte Entwicklung nach Spezifikation. Staging-Umgebung von Tag eins, Meilenstein-Abnahmen.",
+    process_step3_deliverable:"Deliverable: Getesteter, produktionsreifer Build",
+    process_step4_title:      "Übergabe",
+    process_step4_desc:       "Vollständige technische Dokumentation, Betreiberhandbuch und Post-Launch-Monitoring. Das System läuft ohne mich \u2014 das ist das Ziel.",
+    process_step4_deliverable:"Deliverable: Runbook + Dokumentationspaket",
 
     stat_1_val: "&lt;2s",
     stat_1_lbl: "Streaming-Latenz",
@@ -293,10 +339,10 @@ const translations = {
     nav_contact:      "التواصل",
     nav_hire:         "توظيف أسامة",
 
-    hero_availability: "متاح لمشاريع الهندسة البرمجية",
+    hero_availability: "متاح لمهام هندسية عالية التعقيد",
     hero_eyebrow:      "هندسة الأنظمة · فول ستاك · مهندس SaaS",
-    hero_headline:     "أبني أنظمة<br />تصمد <em>فعلاً</em><br />تحت ضغط الإنتاج.",
-    hero_sub:          "بنية تحتية خلفية عالية الأداء، معالجة الفيديو السحابية، منصات التوصيل المحلية، وأنظمة SaaS للمؤسسات — مصنوعة بانضباط وتُسلَّم باحترافية.",
+    hero_headline:     "أُقلل مخاطر<br /><em>التنفيذ التقني</em><br />المعقد.",
+    hero_sub:          "أنظمة إنتاج تصمد أمام التوسع والتدقيق والفجوة بين النموذج الأولي والمؤسسة. بنية خلفية وخطوط أنابيب سحابية وبنية SaaS \u2014 مسؤولية كاملة من البداية للنهاية.",
     hero_cta_work:     "عرض المشاريع",
     hero_cta_term:     "فتح الترمينال",
 
@@ -308,7 +354,47 @@ const translations = {
     badge_item_3:           "تسهيلات وظائف تكنولوجيا المعلومات المطلوبة",
     badge_item_4:           "برامج الكفاءات العالية والنظام السريع",
 
-    stat_1_val: "أقل من 2s",
+    /* Testimonials */
+    testimonials_label:    "منظور العملاء",
+    testimonials_title:    "ما يقوله الشركاء.",
+    testimonials_ref_text: "مراجع تفصيلية للمشاريع وجهات اتصال العملاء متاحة عند الطلب للمشاركات المؤهلة.",
+    testimonials_ref_cta:  "طلب المراجع",
+
+    /* Process */
+    process_label:            "نموذج التعاقد",
+    process_title:            "كيف أعمل.",
+    process_sub:              "كل مشاركة تتبع نموذج تسليم منظم ومنخفض المخاطر. لا مسرح للسبرينت \u2014 فقط مخرجات واضحة في كل مرحلة.",
+    process_step1_title:      "الاستكشاف",
+    process_step1_desc:       "تدقيق المتطلبات ونموذج التهديد وسجل قرارات المعمارية. نتوافق على القيود ومعايير النجاح قبل كتابة أي كود.",
+    process_step1_deliverable:"المُخرَج: سجل قرار المعمارية",
+    process_step2_title:      "التصميم",
+    process_step2_desc:       "مخطط معمارية النظام ونموذج البيانات وعقد API وطوبولوجيا النشر. كل قرار موثق مع مبرراته.",
+    process_step2_deliverable:"المُخرَج: وثيقة تصميم النظام",
+    process_step3_title:      "البناء",
+    process_step3_desc:       "تطوير منضبط وفق المواصفات. بيئة تجهيز من اليوم الأول، وموافقات على كل مرحلة.",
+    process_step3_deliverable:"المُخرَج: بناء إنتاجي مُختبر وجاهز",
+    process_step4_title:      "التسليم",
+    process_step4_desc:       "توثيق تقني كامل، دليل تشغيل، ومراقبة ما بعد الإطلاق. النظام يعمل بدوني \u2014 هذا هو الهدف.",
+    process_step4_deliverable:"المُخرَج: حزمة Runbook + التوثيق",
+
+    /* Process */
+    process_label:            "نموذج التعاقد",
+    process_title:            "كيف أعمل.",
+    process_sub:              "كل مشاركة تتبع نموذج تسليم منظم ومنخفض المخاطر. لا مسرح للسبرينت \u2014 فقط مخرجات واضحة في كل مرحلة.",
+    process_step1_title:      "الاستكشاف",
+    process_step1_desc:       "تدقيق المتطلبات ونموذج التهديد وسجل قرارات المعمارية. نتوافق على القيود ومعايير النجاح قبل كتابة أي كود.",
+    process_step1_deliverable:"المُخرَج: سجل قرار المعمارية",
+    process_step2_title:      "التصميم",
+    process_step2_desc:       "مخطط معمارية النظام ونموذج البيانات وعقد API وطوبولوجيا النشر. كل قرار موثق مع مبرراته.",
+    process_step2_deliverable:"المُخرَج: وثيقة تصميم النظام",
+    process_step3_title:      "البناء",
+    process_step3_desc:       "تطوير منضبط وفق المواصفات. بيئة تجهيز من اليوم الأول، وموافقات على كل مرحلة.",
+    process_step3_deliverable:"المُخرَج: بناء إنتاجي مُختبر وجاهز",
+    process_step4_title:      "التسليم",
+    process_step4_desc:       "توثيق تقني كامل، دليل تشغيل، ومراقبة ما بعد الإطلاق. النظام يعمل بدوني \u2014 هذا هو الهدف.",
+    process_step4_deliverable:"المُخرَج: حزمة Runbook + التوثيق",
+
+    /* Stats */
     stat_1_lbl: "تأخير البث",
     stat_2_val: "0%",
     stat_2_lbl: "فقدان الأرشيف",

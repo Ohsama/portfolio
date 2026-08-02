@@ -18,6 +18,10 @@ const PROJECTS = {
     arch1: 'A Python bridge ingests raw RTSP feeds and runs two simultaneous FFmpeg pipelines: a rolling 2-second HLS playlist for live consumption, and 60-second .ts segment files for archival chunking. A thread-safe queue intercepts the upload path — during outages, segments accumulate locally and flush to MinIO object storage in strict temporal order on reconnection.',
     arch2: 'The mobile application (React Native + Expo) stitches daily segment sequences into continuous playback timelines using metadata stored in Supabase PostgreSQL.',
     stack: ['Python', 'FFmpeg', 'HLS / RTSP', 'MinIO (S3)', 'Supabase', 'PostgreSQL', 'React Native', 'Expo', 'Docker', 'Nginx'],
+    hotspots: [
+      { x: '25%', y: '35%', label: 'RTSP Stream ingest & Python OpenCV bridge' },
+      { x: '65%', y: '60%', label: 'Thread-Safe Queue: 0% frame loss during network drop' }
+    ]
   },
   rsmanager: {
     index: '02',
@@ -32,6 +36,10 @@ const PROJECTS = {
     arch1: 'The backend is a FastAPI service with asynchronous SQLAlchemy ORM on PostgreSQL, protected by JWT authentication. Four role tiers — Owner, Manager, Technician, Cashier — enforce API-level permission boundaries. The POS module handles barcode scanning, trade-in discounts, custom line items, and thermal receipt output via python-escpos.',
     arch2: 'The frontend is a React + Vite application built in TypeScript with Zustand for global state management. The entire app is bundled into a portable offline distribution for shops without reliable internet access.',
     stack: ['FastAPI', 'Python', 'PostgreSQL', 'SQLAlchemy (Async)', 'JWT', 'React 18', 'TypeScript', 'Vite', 'TailwindCSS', 'Zustand', 'python-escpos'],
+    hotspots: [
+      { x: '30%', y: '25%', label: 'PostgreSQL Row-Level Security (RLS) tenant isolation' },
+      { x: '70%', y: '50%', label: 'python-escpos thermal hardware print bridge' }
+    ]
   },
   jibli: {
     index: '03',
@@ -46,6 +54,10 @@ const PROJECTS = {
     arch1: 'Built with Flutter for both the customer and courier mobile apps, sharing a common FastAPI backend orchestrating Supabase PostgreSQL. Real-time WebSockets broadcast order state transitions (Created → Accepted → Picked Up → Out for Delivery → Delivered) to all three parties instantly.',
     arch2: 'Live GPS streams continuously update courier positions, feeding a proximity-assignment algorithm that automatically dispatches new orders to the nearest available courier based on real-time location data.',
     stack: ['Flutter', 'Dart', 'FastAPI', 'Python', 'Supabase', 'PostgreSQL', 'WebSockets', 'GPS Tracking', 'Docker'],
+    hotspots: [
+      { x: '35%', y: '40%', label: 'WebSocket 100ms state-machine broadcast' },
+      { x: '75%', y: '70%', label: 'Live GPS proximity driver dispatch' }
+    ]
   },
   hcmonitor: {
     index: '04',
@@ -197,6 +209,22 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => io.observe(el));
   } else {
     revealEls.forEach(el => el.classList.add('visible'));
+  }
+
+  /* ── Magnetic CTA Physics (Phase 4.1) ── */
+  if (!('ontouchstart' in window)) {
+    const magneticBtns = document.querySelectorAll('.btn-primary, .nav-hire, .nav-download-spec');
+    magneticBtns.forEach(btn => {
+      btn.addEventListener('mousemove', e => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${x * 0.18}px, ${y * 0.18}px)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
+    });
   }
 
   /* ── Active Nav Highlight on Scroll ── */
@@ -376,8 +404,26 @@ function openProjectModal(projectKey) {
   document.getElementById('modalArch2').style.display = data.arch2 ? 'block' : 'none';
 
   const screenshot = document.getElementById('modalScreenshot');
-  screenshot.src = data.screenshot;
-  screenshot.alt = data.screenshotAlt;
+  // Populate Hotspot Pins
+  const modalVisual = document.querySelector('.modal-visual');
+  if (modalVisual) {
+    // Remove existing pins
+    modalVisual.querySelectorAll('.hotspot-pin').forEach(p => p.remove());
+
+    if (data.hotspots && data.hotspots.length) {
+      data.hotspots.forEach(hs => {
+        const pin = document.createElement('div');
+        pin.className = 'hotspot-pin';
+        pin.style.left = hs.x;
+        pin.style.top = hs.y;
+        pin.innerHTML = `
+          <div class="hotspot-dot"></div>
+          <div class="hotspot-tooltip">${hs.label}</div>
+        `;
+        modalVisual.appendChild(pin);
+      });
+    }
+  }
 
   const pillsContainer = document.getElementById('modalStack');
   pillsContainer.innerHTML = '';

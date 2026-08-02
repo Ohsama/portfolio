@@ -32,6 +32,7 @@
       <li><a href="#work" data-i18n="nav_work">Work</a></li>
       <li><a href="#approach" data-i18n="nav_approach">Philosophy</a></li>
       <li><a href="#terminal-section" data-i18n="nav_terminal">Terminal</a></li>
+      <li><a href="#architecture" data-i18n="nav_arch">Architecture</a></li>
       <li><a href="#capabilities" data-i18n="nav_capabilities">Stack</a></li>
       <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
     </ul>
@@ -48,6 +49,10 @@
         <!-- Sun Icon for switching to Light/Beige -->
         <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
+      <a href="screenshots/OussamaBoukhalfa_TechnicalSpec.pdf" download class="nav-download-spec" title="Download Architecture Spec PDF">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span data-i18n="nav_pdf_spec">PDF Spec</span>
+      </a>
       <a href="#contact" class="nav-hire" data-i18n="nav_hire">Hire Oussama</a>
     </div>
   </nav>
@@ -409,6 +414,44 @@
         </div>
       </article>
 
+    </div>
+  </div>
+</section>
+
+<!-- ░░ INTERACTIVE ARCHITECTURE VISUALIZER ░░ -->
+<section id="architecture">
+  <div class="container">
+    <div class="arch-header reveal">
+      <p class="section-label" data-i18n="arch_label">Systems Playground</p>
+      <h2 class="section-title" data-i18n="arch_title">Live Architecture Visualizer.</h2>
+      <p class="section-sub" data-i18n="arch_sub">Interactive data-flow node topologies. Watch packets traverse pipelines in real-time.</p>
+    </div>
+
+    <!-- System Selector Tabs -->
+    <div class="arch-tabs reveal reveal-delay-1">
+      <button class="arch-tab-btn active" data-arch="vsaas">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        <span>VSaaS Video Pipeline</span>
+      </button>
+      <button class="arch-tab-btn" data-arch="jibli">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <span>Jibli Logistics Routing</span>
+      </button>
+      <button class="arch-tab-btn" data-arch="rsmanager">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <span>RSManager Multi-Tenant</span>
+      </button>
+    </div>
+
+    <!-- Active Architecture Info & Canvas Card -->
+    <div class="arch-card reveal reveal-delay-2">
+      <div class="arch-card-meta">
+        <h3 id="arch-title" class="arch-card-title">VSaaS Cloud Video Streaming & Archival Pipeline</h3>
+        <p id="arch-desc" class="arch-card-desc">Sub-2s latency RTSP stream ingested via Python OpenCV bridge into a dual HLS segmenter and thread-safe ring buffer for zero-frame-loss S3 archiving.</p>
+      </div>
+
+      <!-- SVG Node Graph Canvas -->
+      <div id="arch-canvas-container" class="arch-canvas-wrap"></div>
     </div>
   </div>
 </section>
@@ -803,6 +846,7 @@
   </div>
 </footer>
 
+<script src="architecture.js?v=5.0"></script>
 <script src="app.js?v=5.0"></script>
 </body>
 </html>

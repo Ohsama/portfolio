@@ -404,6 +404,11 @@ function openProjectModal(projectKey) {
   document.getElementById('modalArch2').style.display = data.arch2 ? 'block' : 'none';
 
   const screenshot = document.getElementById('modalScreenshot');
+  if (screenshot) {
+    screenshot.src = data.screenshot;
+    screenshot.alt = data.screenshotAlt || data.title;
+  }
+
   // Populate Hotspot Pins
   const modalVisual = document.querySelector('.modal-visual');
   if (modalVisual) {
